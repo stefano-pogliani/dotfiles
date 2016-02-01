@@ -9,18 +9,22 @@ The following commands will install the configuration from the repository.
 
 On Fedora run:
 ```bash
-sudo yum install make tmux vim
+sudo yum install make powerline tmux vim
+
 curl --silent --location https://rpm.nodesource.com/setup_5.x | sudo -E bash -
 sudo yum install nodejs
 sudo npm install -g templetise
+
 make
 ```
 
 On Manjaro (Arch-base distro):
 ```bash
-sudo pacman --sync make tmux vim
+sudo pacman --sync make powerline tmux vim
+
 sudo pacman --sync nodejs npm
 sudo npm install -g templetise
+
 make
 ```
 

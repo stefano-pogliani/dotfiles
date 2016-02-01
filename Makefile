@@ -8,12 +8,14 @@ export REPO ?= $(CURDIR)
 
 build:
 	$(MAKE) -C bash/ build
-	$(MAKE) -C vim/  build
+	$(MAKE) -C powerline/ build
+	$(MAKE) -C vim/ build
 
 
 clean:
 	$(MAKE) -C bash/ clean
-	$(MAKE) -C vim/  clean
+	$(MAKE) -C powerline/ clean
+	$(MAKE) -C vim/ clean
 
 
 help:
@@ -22,12 +24,14 @@ help:
 
 install:
 	$(MAKE) -C bash/ install
-	$(MAKE) -C vim/  install
+	$(MAKE) -C powerline/ install
+	$(MAKE) -C vim/ install
 
 
 uninstall:
 	$(MAKE) -C bash/ uninstall
-	$(MAKE) -C vim/  uninstall
+	$(MAKE) -C powerline/ uninstall
+	$(MAKE) -C vim/ uninstall
 
 
 update:
