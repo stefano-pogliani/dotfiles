@@ -23,6 +23,7 @@ build:
 clean:
 
 install: $(PL_CONF)
+	powerline-daemon --replace
 
 uninstall:
 	[ -L "$(PL_CONF)" -o "$(FORCE)" == "yes" ] && rm -f "$(PL_CONF)"

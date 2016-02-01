@@ -44,6 +44,12 @@ endfunction
 command -nargs=1 SearchAll call GrepAll(<f-args>)
 
 
+"Load powerline"
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
+
 "Load additional files."
 source {{ REPO_PATH }}/vim/folding.vim
 source {{ REPO_PATH }}/vim/nerdtree.vim
