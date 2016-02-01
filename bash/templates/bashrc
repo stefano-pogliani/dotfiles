@@ -1,0 +1,20 @@
+# This file was automatically generated from a template.
+#  To chage it, update '{{ REPO_PATH }}/bash/templates/bashrc'
+#  and re-generate this file with `make build`.
+
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+
+# Make REPO_PATH available to sourced files.
+export REPO_PATH="{{ REPO_PATH }}"
+
+
+. "${REPO_PATH}/bash/aliases"
+
+
+# But do not pollute the environmnet with it.
+unset REPO_PATH

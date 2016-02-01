@@ -1,0 +1,27 @@
+make
+  Alias for `make install`
+
+make build
+  Some configuration files are built out of templates.
+
+make clean
+  Deletes the generated configuration files.
+
+make help
+  Prints this message.
+
+make install [FORCE=yes]
+  Installs the configuration for the current user by symlinking to
+  the files in this repository.
+
+  If FORCE is set to yes, existing files are replaced with symlinks.
+
+make uninstall
+  Deletes the symlinks to the configuration files.
+
+make update
+  For components that carry dependencies (like vim bundles),
+  update those dependencies.
+
+make variables
+  Shows the variables used o tweak other actions and their current value.

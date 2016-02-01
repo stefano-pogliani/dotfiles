@@ -1,0 +1,53 @@
+"Load and run pathogen."
+source {{ REPO_PATH }}/vim/pathogen.vim
+execute pathogen#infect("{{ REPO_PATH }}/vim/bundles/{}")
+
+
+"Basic options."
+set autoindent
+set number
+set splitright
+syntax on
+filetype plugin indent on
+
+
+"Auto complete options."
+inoremap <Nul> <C-n>
+map r :redo<cr>
+set complete+=k
+
+
+"Auto indent options."
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+imap <S-Tab> <C-o><<
+
+
+"Spell checking."
+set  dictionary={{ REPO_PATH }}/vim/en_GB.dic
+map  <F2> :setlocal spell! spelllang=en_gb<CR>
+map  <F3> z=
+imap <F2> <Esc><F2>i
+imap <F3> <Esc><F3>
+command SpellCheck execute "setlocal spell spelllang=en_gb"
+command Nospell    execute "set nospell"
+
+
+"Searching"
+function GrepAll(pattern)
+  execute "silent grep -RIn '" . a:pattern . "' *"
+  redraw!
+  cwindow
+endfunction
+command -nargs=1 SearchAll call GrepAll(<f-args>)
+
+
+"Load additional files."
+source {{ REPO_PATH }}/vim/folding.vim
+source {{ REPO_PATH }}/vim/nerdtree.vim
+
+
+"Plugins configuration"
+let g:vim_json_syntax_conceal = 0

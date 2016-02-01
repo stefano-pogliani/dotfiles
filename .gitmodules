@@ -1,0 +1,21 @@
+[submodule "vim/bundles/nerdtree"]
+	path = vim/bundles/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundles/salt-vim"]
+	path = vim/bundles/salt-vim
+	url = https://github.com/saltstack/salt-vim.git
+[submodule "vim/bundles/vim-gitgutter"]
+	path = vim/bundles/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "vim/bundles/vim-javascript"]
+	path = vim/bundles/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim/bundles/vim-jinja2-syntax"]
+	path = vim/bundles/vim-jinja2-syntax
+	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
+[submodule "vim/bundles/vim-json"]
+	path = vim/bundles/vim-json
+	url = https://github.com/elzr/vim-json.git
+[submodule "vim/bundles/vim-markdown"]
+	path = vim/bundles/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
