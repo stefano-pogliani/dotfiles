@@ -1,4 +1,5 @@
 *.swp
 
 bash/bashrc
+tmux/tmux.conf
 vim/vimrc

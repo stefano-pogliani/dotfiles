@@ -9,22 +9,28 @@ The following commands will install the configuration from the repository.
 
 On Fedora run:
 ```bash
-sudo yum install make powerline tmux vim
+sudo yum install git make tmux vim
+sudo yum install powerline tmux-powerline
 
 curl --silent --location https://rpm.nodesource.com/setup_5.x | sudo -E bash -
 sudo yum install nodejs
 sudo npm install -g templetise
 
+git clone https://github.com/stefano-pogliani/dotfiles.git
+cd dotfiles
 make
 ```
 
-On Manjaro (Arch-base distro):
+On Manjaro (Arch-based distro):
 ```bash
-sudo pacman --sync make powerline tmux vim
+sudo pacman --sync git make tmux vim
+sudo pacman --sync powerline tmux-powerline
 
 sudo pacman --sync nodejs npm
 sudo npm install -g templetise
 
+git clone https://github.com/stefano-pogliani/dotfiles.git
+cd dotfiles
 make
 ```
 
@@ -83,3 +89,12 @@ the config files in this repository as follow:
   * `bash`: `~/.bashrc -> bash/bashrc`
   * `tmux`: `~/.tmux.conf -> tmux/tmux.conf`
   * `vim`:  `~/.vimrc -> vim/vimrc`
+
+
+Todo
+----
+
+  * Check all commands/packages on arch linux.
+  * Tweak tmux command line.
+  * Vim sessions with NERDTree.
+  * Vim GDB integration.
