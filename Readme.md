@@ -138,6 +138,5 @@ Tmux:
   * tmux-yank
 
 Vim:
-  * Navigation configuration to match TMUX.
   * Conque Shell.
   * Vim GDB integration.

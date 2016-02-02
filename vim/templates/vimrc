@@ -58,6 +58,7 @@ source {{ REPO_PATH }}/vim/nerdtree.vim
 
 "Plugins configuration"
 let g:session_autoload = "no"
+let g:session_autosave = "no"
 let g:session_command_aliases = 1
 let g:session_verbose_messages = 0
 let g:vim_json_syntax_conceal = 0
