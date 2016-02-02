@@ -31,6 +31,9 @@ install:
 	$(MAKE) -C vim/ install
 
 
+reinstall: uninstall clean install
+
+
 uninstall:
 	$(MAKE) -C bash/ uninstall
 	$(MAKE) -C powerline/ uninstall

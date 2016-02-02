@@ -16,6 +16,9 @@ make install [FORCE=yes]
 
   If FORCE is set to yes, existing files are replaced with symlinks.
 
+make reinstall
+  Uninstalls, cleans, and then installs the configuration files.
+
 make uninstall
   Deletes the symlinks to the configuration files.
 

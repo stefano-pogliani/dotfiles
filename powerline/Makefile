@@ -13,8 +13,10 @@ endif
 $(PL_DIR):
 	mkdir -p $(PL_DIR)
 
+# After the symlink is created, update the directory so that make will not run this again.
 $(PL_CONF): $(PL_DIR)
 	ln $(SYMLINK_FORCE) --no-dereference -s "$(REPO)/powerline/configuration" "$(PL_CONF)"
+	touch "$(REPO)/powerline/configuration"
 
 
 # Targets

@@ -49,7 +49,7 @@ Make interface
 --------------
 Configurations in this repository are applied to the user with `make`.
 For more information use `make help`:
-```bash
+```
 make
   Alias for `make install`
 
@@ -67,6 +67,9 @@ make install [FORCE=yes]
   the files in this repository.
 
   If FORCE is set to yes, existing files are replaced with symlinks.
+
+make reinstall
+  Uninstalls, cleans, and then installs the configuration files.
 
 make uninstall
   Deletes the symlinks to the configuration files.
