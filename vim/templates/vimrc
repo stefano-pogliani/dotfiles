@@ -52,6 +52,7 @@ python del powerline_setup
 
 "Load additional files."
 source {{ REPO_PATH }}/vim/folding.vim
+source {{ REPO_PATH }}/vim/navigation.vim
 source {{ REPO_PATH }}/vim/nerdtree.vim
 
 

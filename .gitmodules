@@ -31,3 +31,6 @@
 [submodule "vim/bundles/xolox-vim-misc"]
 	path = vim/bundles/xolox-vim-misc
 	url = https://github.com/xolox/vim-misc.git
+[submodule "vim/bundles/vim-windowswap"]
+	path = vim/bundles/vim-windowswap
+	url = https://github.com/wesQ3/vim-windowswap.git

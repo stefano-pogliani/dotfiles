@@ -107,17 +107,24 @@ most appropriate for the program instaed.
 
 The following configuration should be matched:
 ```
-Select pane above:        Prefix + ↑
-Select pane below:        Prefix + ↓
-Select pane on the left:  Prefix + ←
-Select pane on the right: Prefix + →
+Select pane above:        Alt + ↑
+Select pane below:        Alt + ↓
+Select pane on the left:  Alt + ←
+Select pane on the right: Alt + →
 
-Select leftmost pane: Prefix + Alt + ←
+Select leftmost pane:  Alt + PageUp
+Select rightmost pane: Alt + PageDown
 
-Swap with pane above:        ?
-Swap with pane below:        ?
-Swap with pane on the left:  ?
-Swap with pane on the right: ?
+Swap with pane above:        Alt + Shift + ↑
+Swap with pane below:        Alt + Shift + ↓
+Swap with pane on the left:  Alt + Shift + ←
+Swap with pane on the right: Alt + Shift + →
+
+Move tab to the left:  Ctrl + Shift + ←
+Move tab to the right: Ctrl + Shift + →
+
+Move to previous word: Ctrl + ←
+Move to next word:     Ctrl + →
 ```
 
 
@@ -128,7 +135,6 @@ Todo
 
 Tmux:
   * Tweak tmux powerline.
-  * Navigation configuration (suggestions from https://github.com/tmux-plugins/tmux-pain-control/blob/master/pain_control.tmux )
   * tmux-yank
 
 Vim:
