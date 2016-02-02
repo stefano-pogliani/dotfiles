@@ -94,10 +94,44 @@ the config files in this repository as follow:
   * `vim`:  `~/.vimrc -> vim/vimrc`
 
 
+Pane navigation
+---------------
+Both VIM and TMUX have interfaces that support panes.
+And that means navigating through them!
+
+Here is defined a unified configuration for all pane navigation
+and layout manipulation.
+As the programs have different features, sometime consistency is
+either not possible or too limiting, in which case use what is
+most appropriate for the program instaed.
+
+The following configuration should be matched:
+```
+Select pane above:        Prefix + ↑
+Select pane below:        Prefix + ↓
+Select pane on the left:  Prefix + ←
+Select pane on the right: Prefix + →
+
+Select leftmost pane: Prefix + Alt + ←
+
+Swap with pane above:        ?
+Swap with pane below:        ?
+Swap with pane on the left:  ?
+Swap with pane on the right: ?
+```
+
+
 Todo
 ----
 
   * Check all commands/packages on arch linux.
-  * Tweak tmux command line.
-  * Vim sessions with NERDTree.
+
+Tmux:
+  * Tweak tmux powerline.
+  * Navigation configuration (suggestions from https://github.com/tmux-plugins/tmux-pain-control/blob/master/pain_control.tmux )
+  * tmux-yank
+
+Vim:
+  * Navigation configuration to match TMUX.
+  * Conque Shell.
   * Vim GDB integration.

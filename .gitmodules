@@ -25,3 +25,9 @@
 [submodule "tmux/plugins/resurrect"]
 	path = tmux/plugins/resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect.git
+[submodule "vim/bundles/vim-session"]
+	path = vim/bundles/vim-session
+	url = https://github.com/xolox/vim-session.git
+[submodule "vim/bundles/xolox-vim-misc"]
+	path = vim/bundles/xolox-vim-misc
+	url = https://github.com/xolox/vim-misc.git
