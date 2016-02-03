@@ -142,6 +142,6 @@ Tmux:
 
 Vim:
   * Conque Shell.
-  * ProjectsRC.
   * Vim GDB integration.
   * Vim NodeJs debugger.
+  * Write and include StDebug for standard debugging interface.
