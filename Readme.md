@@ -127,6 +127,9 @@ Move to previous word: Ctrl + ←
 Move to next word:     Ctrl + →
 ```
 
+Tmux uses `Prefix` in front of the key combination in place of the `Alt`
+key to avoid intercepting the combination sent to nested programs.
+
 
 Todo
 ----
@@ -139,4 +142,6 @@ Tmux:
 
 Vim:
   * Conque Shell.
+  * ProjectsRC.
   * Vim GDB integration.
+  * Vim NodeJs debugger.
