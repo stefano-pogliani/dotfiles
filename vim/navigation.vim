@@ -19,8 +19,10 @@ nnoremap <silent> <A-S-Left>  :call SpoglianiMoveWindow("h")<CR>
 nnoremap <silent> <A-S-Right> :call SpoglianiMoveWindow("l")<CR>
 nnoremap <silent> <A-S-Up>    :call SpoglianiMoveWindow("k")<CR>
 
-nnoremap <silent> <C-S-Left>  :tabmove -1<CR>
-nnoremap <silent> <C-S-Right> :tabmove +1<CR>
+nnoremap <silent> <C-S-Left>  :tabp<CR>
+nnoremap <silent> <C-S-Right> :tabn<CR>
+nnoremap <silent> <C-S-PageDown> :tabmove +1<CR>
+nnoremap <silent> <C-S-PageUp>   :tabmove -1<CR>
 
 "Configure word jumping."
 inoremap <silent> <C-Left>    <Esc><Right>bi

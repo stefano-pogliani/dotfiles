@@ -1,5 +1,5 @@
-My user env configuration
-=========================
+My env configuration
+====================
 Configuration and personalisation files for bash, tmux, vim, and such.
 
 
@@ -10,7 +10,7 @@ The following commands will install the configuration from the repository.
 On Fedora run:
 ```bash
 sudo yum install git make tmux vim
-sudo yum install powerline tmux-powerline
+sudo pip install powerline-status
 
 curl --silent --location https://rpm.nodesource.com/setup_5.x | sudo -E bash -
 sudo yum install nodejs
@@ -23,8 +23,8 @@ make
 
 On Manjaro (Arch-based distro):
 ```bash
-sudo pacman --sync git make tmux vim
-sudo pacman --sync powerline tmux-powerline
+sudo pacman --sync python-pip ttf-dejavu-sans-mono-powerline
+sudo pip install powerline-status
 
 sudo pacman --sync nodejs npm
 sudo npm install -g templetise

@@ -3,6 +3,7 @@
 
 
 export FORCE = no
+export POWER_ROOT := $(shell "./find-powerline.sh")
 export REPO ?= $(CURDIR)
 
 
@@ -49,3 +50,4 @@ update:
 variables:
 	@echo "Force: $(FORCE)"
 	@echo "Repo:  $(REPO)"
+	@echo "Powerline root: $(POWER_ROOT)"

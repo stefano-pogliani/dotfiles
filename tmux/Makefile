@@ -10,8 +10,10 @@ endif
 
 # Build deps
 tmux.conf: templates/tmux.conf
-	templetise --inline='{ "REPO_PATH": "$(REPO)" }' \
-		--helpers=templates/helpers.js                 \
+	templetise                                      \
+		--inline='{ "REPO_PATH": "$(REPO)" }'         \
+		--inline='{ "POWER_ROOT": "$(POWER_ROOT)" }'  \
+		--helpers=templates/helpers.js                \
 		templates/tmux.conf > tmux.conf
 
 
