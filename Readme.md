@@ -16,22 +16,26 @@ curl --silent --location https://rpm.nodesource.com/setup_5.x | sudo -E bash -
 sudo yum install nodejs
 sudo npm install -g templetise
 
-git clone https://github.com/stefano-pogliani/dotfiles.git
+git clone --recursive https://github.com/stefano-pogliani/dotfiles.git
 cd dotfiles
-make
+make install
 ```
 
 On Manjaro (Arch-based distro):
 ```bash
-sudo pacman --sync python-pip ttf-dejavu-sans-mono-powerline
-sudo pip install powerline-status
+sudo pacman --sync ttf-dejavu-sans-mono-powerline
+sudo pacman --sync python-pip python2-pip
+sudo pip2 install powerline-status  # Vim is built with py2 support.
+sudo pip  install powerline-status
 
 sudo pacman --sync nodejs npm
 sudo npm install -g templetise
 
-git clone https://github.com/stefano-pogliani/dotfiles.git
+mv ~/.bashrc ~/.system.bashrc
+
+git clone --recursive https://github.com/stefano-pogliani/dotfiles.git
 cd dotfiles
-make
+make install
 ```
 
 
