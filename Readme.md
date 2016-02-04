@@ -137,10 +137,8 @@ key to avoid intercepting the combination sent to nested programs.
 
 Todo
 ----
-
-  * Check all commands/packages on arch linux.
-
 Tmux:
+  * Fix colours with gnome 3.18.2
   * Tweak tmux powerline.
   * tmux-yank
 
