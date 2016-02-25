@@ -138,7 +138,6 @@ key to avoid intercepting the combination sent to nested programs.
 Todo
 ----
 Tmux:
-  * Fix colours with gnome 3.18.2
   * Tweak tmux powerline.
   * tmux-yank
 
