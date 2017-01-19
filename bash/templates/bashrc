@@ -11,6 +11,11 @@ if [ -f ~/.system.bashrc ]; then
   . ~/.system.bashrc
 fi
 
+# Source system secrets
+if [ -f ~/.secret.bashrc ]; then
+  . ~/.secret.bashrc
+fi
+
 
 # Make REPO_PATH available to sourced files.
 export REPO_PATH="{{ REPO_PATH }}"
@@ -22,6 +27,8 @@ export REPO_PATH="{{ REPO_PATH }}"
 # But do not pollute the environmnet with it.
 unset REPO_PATH
 
+export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/bin/terraform"
 
 # Load powerline.
 if [ -f `which powerline-daemon` ]; then

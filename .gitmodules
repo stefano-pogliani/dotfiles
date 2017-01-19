@@ -34,3 +34,9 @@
 [submodule "vim/bundles/vim-windowswap"]
 	path = vim/bundles/vim-windowswap
 	url = https://github.com/wesQ3/vim-windowswap.git
+[submodule "vim/bundles/Dockerfile.vim"]
+	path = vim/bundles/Dockerfile.vim
+	url = https://github.com/ekalinin/Dockerfile.vim.git
+[submodule "vim/bundles/vim-less"]
+	path = vim/bundles/vim-less
+	url = https://github.com/groenewege/vim-less
