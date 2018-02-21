@@ -3,35 +3,24 @@ My env configuration
 Configuration and personalisation files for bash, tmux, vim, and such.
 
 
+Requirements
+------------
+
+  * tmux (2.3+)
+
+
 Quick start
 -----------
 The following commands will install the configuration from the repository.
 
 On Fedora run:
 ```bash
-sudo yum install git make tmux vim
+sudo dnf install git make tmux vim xclip
 sudo pip install powerline-status
 
-curl --silent --location https://rpm.nodesource.com/setup_5.x | sudo -E bash -
-sudo yum install nodejs
+curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo -E bash -
+sudo dnf install nodejs
 sudo npm install -g templetise
-
-git clone --recursive https://github.com/stefano-pogliani/dotfiles.git
-cd dotfiles
-make install
-```
-
-On Manjaro (Arch-based distro):
-```bash
-sudo pacman --sync ttf-dejavu-sans-mono-powerline
-sudo pacman --sync python-pip python2-pip
-sudo pip2 install powerline-status  # Vim is built with py2 support.
-sudo pip  install powerline-status
-
-sudo pacman --sync nodejs npm
-sudo npm install -g templetise
-
-mv ~/.bashrc ~/.system.bashrc
 
 git clone --recursive https://github.com/stefano-pogliani/dotfiles.git
 cd dotfiles
