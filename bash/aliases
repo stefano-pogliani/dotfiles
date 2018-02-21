@@ -1,3 +1,12 @@
 # Bash aliases file.
 
 alias ll="ls -lah --group-directories-first"
+
+
+# Include workstation specific aliases if present.
+if [ -f ~/.aliases/custom ]; then
+  . ~/.aliases/custom
+fi
+if [ -f ~/.aliases/work ]; then
+  . ~/.aliases/work
+fi
