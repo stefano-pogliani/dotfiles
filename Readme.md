@@ -15,11 +15,10 @@ The following commands will install the configuration from the repository.
 
 On Fedora run:
 ```bash
-sudo dnf install git make tmux vim xclip
-sudo pip install powerline-status
+sudo dnf install git make tmux vim xclip powerline-fonts
+sudo pip3 install powerline-status
 
-curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo -E bash -
-sudo dnf install nodejs
+# Install NVM and node
 sudo npm install -g templetise
 
 git clone --recursive https://github.com/stefano-pogliani/dotfiles.git
