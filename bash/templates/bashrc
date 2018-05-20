@@ -29,6 +29,7 @@ unset REPO_PATH
 
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/bin/terraform"
+[ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # Load powerline.
 if [ -f `which powerline-daemon` ]; then
