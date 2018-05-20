@@ -16,7 +16,11 @@ The following commands will install the configuration from the repository.
 On Fedora run:
 ```bash
 sudo dnf install git make tmux vim xclip powerline-fonts
-sudo pip3 install powerline-status
+# BUG NOTICE: https://github.com/powerline/powerline/pull/1803
+#   Latest release of powerline has a broken C client and is very slow.
+#   Install a specifc commit so the fix is included.
+#sudo pip3 install powerline-status
+sudo pip3 install https://github.com/powerline/powerline/archive/a5dd717ac44223160ff84b13a1513e5a88615292.zip
 
 # Install NVM and node
 sudo npm install -g templetise
