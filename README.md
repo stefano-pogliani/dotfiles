@@ -127,14 +127,22 @@ Tmux uses `Prefix` in front of the key combination in place of the `Alt`
 key to avoid intercepting the combination sent to nested programs.
 
 
+Vim plugins to consider
+-----------------------
+
+  * https://github.com/ctrlpvim/ctrlp.vim
+  * https://vimawesome.com/plugin/youcompleteme
+  * https://vimawesome.com/plugin/syntastic
+  * https://vimawesome.com/plugin/syntastic
+    * https://vimawesome.com/plugin/syntastic
+
+
 Todo
 ----
 Tmux:
   * Tweak tmux powerline.
-  * tmux-yank
 
 Vim:
   * Conque Shell.
   * Vim GDB integration.
   * Vim NodeJs debugger.
-  * Write and include StDebug for standard debugging interface.
