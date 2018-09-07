@@ -1,6 +1,11 @@
+"This file was automatically generated from a template."
+"To chage it, update '${REPO_PATH}/vim/templates/vimrc'"
+"and re-generate this file with `make build`."
+
+
 "Load and run pathogen."
-source {{ REPO_PATH }}/vim/pathogen.vim
-execute pathogen#infect("{{ REPO_PATH }}/vim/bundles/{}")
+source ${REPO_PATH}/vim/pathogen.vim
+execute pathogen#infect("${REPO_PATH}/vim/bundles/{}")
 
 
 "Basic options."
@@ -26,7 +31,7 @@ imap <S-Tab> <C-o><<
 
 
 "Spell checking."
-set  dictionary={{ REPO_PATH }}/vim/en_GB.dic
+set  dictionary=${REPO_PATH}/vim/en_GB.dic
 map  <F2> :setlocal spell! spelllang=en_gb<CR>
 map  <F3> z=
 imap <F2> <Esc><F2>i
@@ -51,9 +56,9 @@ python3 del powerline_setup
 
 
 "Load additional files."
-source {{ REPO_PATH }}/vim/folding.vim
-source {{ REPO_PATH }}/vim/navigation.vim
-source {{ REPO_PATH }}/vim/nerdtree.vim
+source ${REPO_PATH}/vim/folding.vim
+source ${REPO_PATH}/vim/navigation.vim
+source ${REPO_PATH}/vim/nerdtree.vim
 
 
 "Plugins configuration"

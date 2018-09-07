@@ -10,10 +10,8 @@ endif
 
 # Build deps
 bashrc: templates/bashrc
-	templetise                                      \
-		--inline='{ "REPO_PATH": "$(REPO)" }'         \
-		--inline='{ "POWER_ROOT": "$(POWER_ROOT)" }'  \
-		templates/bashrc > bashrc
+	cat templates/bashrc | REPO_PATH="$(REPO)" POWER_ROOT="$(POWER_ROOT)" envsubst \
+		'$${REPO_PATH} $${POWER_ROOT}' > bashrc
 
 
 # Install deps

@@ -10,11 +10,8 @@ endif
 
 # Build deps
 tmux.conf: templates/tmux.conf
-	templetise                                      \
-		--inline='{ "REPO_PATH": "$(REPO)" }'         \
-		--inline='{ "POWER_ROOT": "$(POWER_ROOT)" }'  \
-		--helpers=templates/helpers.js                \
-		templates/tmux.conf > tmux.conf
+	cat templates/tmux.conf | REPO_PATH="$(REPO)" POWER_ROOT="$(POWER_ROOT)" envsubst \
+		'$${REPO_PATH} $${POWER_ROOT}' > tmux.conf
 
 
 # Install deps.

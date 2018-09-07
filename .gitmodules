@@ -22,9 +22,6 @@
 [submodule "vim/bundles/nerdtree-git-plugin"]
 	path = vim/bundles/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
-[submodule "tmux/plugins/resurrect"]
-	path = tmux/plugins/resurrect
-	url = https://github.com/tmux-plugins/tmux-resurrect.git
 [submodule "vim/bundles/xolox-vim-misc"]
 	path = vim/bundles/xolox-vim-misc
 	url = https://github.com/xolox/vim-misc.git

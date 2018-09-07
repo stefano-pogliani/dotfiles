@@ -10,8 +10,7 @@ endif
 
 # Build deps
 vimrc: templates/vimrc
-	templetise --inline='{ "REPO_PATH": "$(REPO)" }' \
-		templates/vimrc > vimrc
+	cat templates/vimrc | REPO_PATH="$(REPO)" envsubst '$${REPO_PATH}' > vimrc
 
 
 # Install deps

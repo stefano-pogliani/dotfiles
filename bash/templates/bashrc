@@ -1,6 +1,6 @@
 # This file was automatically generated from a template.
-#  To chage it, update '{{ REPO_PATH }}/bash/templates/bashrc'
-#  and re-generate this file with `make build`.
+# To chage it, update '${REPO_PATH}/bash/templates/bashrc'
+# and re-generate this file with `make build`.
 
 
 # Source global definitions
@@ -18,7 +18,7 @@ fi
 
 
 # Make REPO_PATH available to sourced files.
-export REPO_PATH="{{ REPO_PATH }}"
+export REPO_PATH="${REPO_PATH}"
 
 
 . "${REPO_PATH}/bash/aliases"
@@ -36,7 +36,7 @@ if [ -f `which powerline-daemon` ]; then
   powerline-daemon -q
   POWERLINE_BASH_CONTINUATION=1
   POWERLINE_BASH_SELECT=1
-  . {{ POWER_ROOT }}/bindings/bash/powerline.sh
+  . ${POWER_ROOT}/bindings/bash/powerline.sh
 fi
 
 # Enable NVM & Bash completion
