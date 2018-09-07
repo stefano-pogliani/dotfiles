@@ -39,3 +39,7 @@ function ConfigureNerdTree()
   autocmd BufWinEnter * call NerdTreeSync()
   autocmd BufEnter *    call NerdTreeQuitLast()
 endfunction
+
+
+"NerdTree configuration"
+let NERDTreeIgnore = ['\.pyc$']

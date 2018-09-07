@@ -54,7 +54,6 @@ python3 del powerline_setup
 source {{ REPO_PATH }}/vim/folding.vim
 source {{ REPO_PATH }}/vim/navigation.vim
 source {{ REPO_PATH }}/vim/nerdtree.vim
-source {{ REPO_PATH }}/vim/projectsrc.vim
 
 
 "Plugins configuration"
