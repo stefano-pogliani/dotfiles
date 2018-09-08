@@ -35,10 +35,10 @@ Dependencies
 ------------
 The following tools are required for this configuration to be installed:
 
+  * `envsubst`: used to convert templates into system-specific files.
   * `make`: used to automate build and installation.
   * `node`: required to run the templating tool.
   * `npm`: required to install the templating tool.
-  * `templetise`: the templating tool.
 
 
 Make interface
