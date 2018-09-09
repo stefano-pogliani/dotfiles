@@ -30,6 +30,7 @@ make install
 # ADDITIONAL TASKS:
 #  * Install nvm and stable node
 #  * Install rustup and stable rust
+#  * Generate SSH key and add to places (if needed)
 ```
 
 
