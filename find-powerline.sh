@@ -5,6 +5,7 @@
 # Look for known paths (faster).
 EASY_FIND=""
 echo -n "Checking known powerline roots ..." >&2
+[ -z "${EASY_FIND}" -a -d "${HOME}/.local/lib/python3.6/site-packages/powerline" ] && EASY_FIND="${HOME}/.local/lib/python3.6/site-packages/powerline"
 [ -z "${EASY_FIND}" -a -d "/usr/local/lib/python3.6/site-packages/powerline" ] && EASY_FIND="/usr/local/lib/python3.6/site-packages/powerline"
 [ -z "${EASY_FIND}" -a -d "/usr/lib/python2.7/site-packages/powerline" ] && EASY_FIND="/usr/lib/python2.7/site-packages/powerline"
 
@@ -13,7 +14,7 @@ if [ -n "${EASY_FIND}" ]; then
   echo " Done!" >&2
   exit 0
 else
-  echo " No luck!"
+  echo " No luck!" >&2
 fi
 
 

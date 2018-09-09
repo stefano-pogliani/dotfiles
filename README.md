@@ -16,18 +16,20 @@ The following commands will install the configuration from the repository.
 On Fedora run:
 ```bash
 sudo dnf install git make tmux vim xclip powerline-fonts
-# BUG NOTICE: https://github.com/powerline/powerline/pull/1803
-#   Latest release of powerline has a broken C client and is very slow.
-#   Install a specifc commit so the fix is included.
-#sudo pip3 install powerline-status
-sudo pip3 install https://github.com/powerline/powerline/archive/a5dd717ac44223160ff84b13a1513e5a88615292.zip
+sudo pip3 install powerline-status
 
-# Install NVM and node
-sudo npm install -g templetise
+# Initialise global git config:
+git config --global user.name "Stefano Pogliani"
+git config --global user.email "<EMAIL>"
+git config --global core.editor vim
 
 git clone --recursive https://github.com/stefano-pogliani/dotfiles.git
 cd dotfiles
 make install
+
+# ADDITIONAL TASKS:
+#  * Install nvm and stable node
+#  * Install rustup and stable rust
 ```
 
 
@@ -37,8 +39,6 @@ The following tools are required for this configuration to be installed:
 
   * `envsubst`: used to convert templates into system-specific files.
   * `make`: used to automate build and installation.
-  * `node`: required to run the templating tool.
-  * `npm`: required to install the templating tool.
 
 
 Make interface
