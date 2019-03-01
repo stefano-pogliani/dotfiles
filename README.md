@@ -16,7 +16,7 @@ The following commands will install the configuration from the repository.
 On Fedora run:
 ```bash
 sudo dnf install git make tmux vim xclip powerline-fonts
-sudo pip3 install powerline-status
+pip3 install --user powerline-status
 
 # Initialise global git config:
 git config --global user.name "Stefano Pogliani"
