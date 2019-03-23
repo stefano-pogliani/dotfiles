@@ -39,7 +39,12 @@ if [ -f `which powerline-daemon` ]; then
   . ${POWER_ROOT}/bindings/bash/powerline.sh
 fi
 
+# Configure GPG Agent
+#  Ensure the gpg-agent is running.
+gpg-connect-agent /bye
+export GPG_AGENT_INFO="/run/user/$(id -u)/gnupg/S.gpg-agent:$(pgrep gpg-agent):1"
+
 # Enable NVM & Bash completion
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+([ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh") || true
+([ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion") || true

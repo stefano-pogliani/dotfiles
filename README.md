@@ -1,16 +1,13 @@
-My env configuration
-====================
+# My env configuration
 Configuration and personalisation files for bash, tmux, vim, and such.
 
 
-Requirements
-------------
+## Requirements
 
   * tmux (2.3+)
 
 
-Quick start
------------
+## Quick start
 The following commands will install the configuration from the repository.
 
 On Fedora run:
@@ -31,19 +28,63 @@ make install
 #  * Install nvm and stable node
 #  * Install rustup and stable rust
 #  * Generate SSH key and add to places (if needed)
+#  * Generate GPG key and add to places (if needed)
 ```
 
 
-Dependencies
-------------
+## Dependencies
 The following tools are required for this configuration to be installed:
 
   * `envsubst`: used to convert templates into system-specific files.
   * `make`: used to automate build and installation.
 
 
-Make interface
---------------
+## GPG Configuration
+GPG is useful to sing various documents, in particular git commits.
+Configuration is now the easiest though, especially when gpg-agent is desired.
+
+The `.bashrc` configuration installed by this repo will automatically start
+a GPG agent and set the `GPG_AGENT_INFO` environment variable to point at it.
+The GPG agent can then be used to cache GPG passphrases and store and load
+them from the OS keyring so you don't have to type them every time.
+
+### Creating a GPG key
+```bash
+# Check available keys.
+gpg --list-keys
+
+# Create a new key:
+#  - Pick a good passphrase as that will be stored in a keyring.
+#  - Pick 4096 bits for the key size.
+gpg --gen-key
+
+# Get the new key ID and export the public key to GitHub:
+gpg --list-secret-keys --keyid-format LONG
+gpg --export --armor KEY_ID
+
+# Configure GPG with the `use-agent` directive:
+vim ~/.gnupg/gpg.conf
+
+# Create the GPG agent configuration:
+#  We at least want the following settings.
+#  Advanced configurations are also possible.
+echo 'no-grab' > ~/.gnupg/gpg-agent.conf
+echo 'default-cache-ttl 3600' >> ~/.gnupg/gpg-agent.conf
+
+# Confgure git to sign commits.
+git config --global commit.gpgsign true
+git config --global user.signingkey KEY_ID
+```
+
+### References
+
+  * https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work
+  * https://help.github.com/en/articles/signing-commits
+  * https://help.github.com/en/articles/generating-a-new-gpg-key
+  * https://tr.opensuse.org/SDB:Using_gpg-agent
+
+
+## Make interface
 Configurations in this repository are applied to the user with `make`.
 For more information use `make help`:
 ```
@@ -80,8 +121,7 @@ make variables
 ```
 
 
-File organisation
------------------
+## File organisation
 Configuration files are divided by application they configure.
 Symlinks are installed to point application's per-user paths to
 the config files in this repository as follow:
@@ -91,8 +131,7 @@ the config files in this repository as follow:
   * `vim`:  `~/.vimrc -> vim/vimrc`
 
 
-Pane navigation
----------------
+## Pane navigation
 Both VIM and TMUX have interfaces that support panes.
 And that means navigating through them!
 
@@ -128,8 +167,7 @@ Tmux uses `Prefix` in front of the key combination in place of the `Alt`
 key to avoid intercepting the combination sent to nested programs.
 
 
-Vim plugins to consider
------------------------
+## Vim plugins to consider
 
   * https://github.com/ctrlpvim/ctrlp.vim
   * https://vimawesome.com/plugin/youcompleteme
@@ -138,8 +176,7 @@ Vim plugins to consider
     * https://vimawesome.com/plugin/syntastic
 
 
-Todo
-----
+## Todo
 Tmux:
   * Tweak tmux powerline.
 
