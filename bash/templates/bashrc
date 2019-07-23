@@ -27,7 +27,7 @@ export REPO_PATH="${REPO_PATH}"
 # But do not pollute the environmnet with it.
 unset REPO_PATH
 
-export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
 export PATH="$PATH:$HOME/bin/terraform"
 [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
@@ -46,5 +46,7 @@ export GPG_AGENT_INFO="/run/user/$(id -u)/gnupg/S.gpg-agent:$(pgrep gpg-agent):1
 
 # Enable NVM & Bash completion
 export NVM_DIR="$HOME/.nvm"
-([ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh") || true
-([ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion") || true
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+# Clear possible non-0 $? left by not having files.
+true
