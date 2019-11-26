@@ -37,3 +37,6 @@
 [submodule "vim/bundles/vim-yaml"]
 	path = vim/bundles/vim-yaml
 	url = https://github.com/avakhov/vim-yaml.git
+[submodule "bash/extentions/asdf"]
+	path = bash/extentions/asdf
+	url = https://github.com/asdf-vm/asdf.git
