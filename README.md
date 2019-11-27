@@ -40,7 +40,7 @@ asdf install kubectl latest
 asdf global kubectl <...>
 
 asdf plugin-add fluxctl
-asdf install fluxctl latest
+asdf install fluxctl <LATEST> # <-- currently bugged, need to manually pick version
 asdf global fluxctl <...>
 
 asdf plugin-add k9s
