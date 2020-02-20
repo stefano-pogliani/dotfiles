@@ -37,3 +37,6 @@
 [submodule "vim/bundles/vim-yaml"]
 	path = vim/bundles/vim-yaml
 	url = https://github.com/avakhov/vim-yaml.git
+[submodule "neovim/vim-plug"]
+	path = neovim/vim-plug
+	url = https://github.com/junegunn/vim-plug.git

@@ -1,5 +1,5 @@
 .DEFAULT_GOAL: install
-.PHONY: build clean install uninstall update
+.PHONY: build clean install uninstall
 
 
 VIMRC = $(HOME)/.vimrc
@@ -28,6 +28,3 @@ install: build $(VIMRC)
 
 uninstall:
 	[ -L "$(VIMRC)" -o "$(FORCE)" == "yes" ] && rm -f "$(VIMRC)"
-
-update:
-	git submodule foreach git pull

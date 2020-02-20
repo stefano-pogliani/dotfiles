@@ -29,6 +29,3 @@ install: build $(TMUX_CONF)
 
 uninstall:
 	[ -L "$(TMUX_CONF)" -o "$(FORCE)" == "yes" ] && rm -f "$(TMUX_CONF)"
-
-update:
-	git submodule foreach git pull

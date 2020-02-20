@@ -4,7 +4,9 @@ Configuration and personalisation files for bash, tmux, vim, and such.
 
 ## Requirements
 
-  * tmux (2.3+)
+  * neovim
+  * powerline-status & powerline-fonts
+  * tmux 2.9a+
 
 
 ## Quick start
@@ -12,7 +14,7 @@ The following commands will install the configuration from the repository.
 
 On Fedora run:
 ```bash
-sudo dnf install git make tmux vim xclip powerline-fonts
+sudo dnf install git make tmux neovim xclip powerline-fonts
 pip3 install --user powerline-status
 
 # Initialise global git config:
@@ -40,7 +42,7 @@ The following tools are required for this configuration to be installed:
 
 
 ## GPG Configuration
-GPG is useful to sing various documents, in particular git commits.
+GPG is useful to sign various documents, in particular git commits.
 Configuration is now the easiest though, especially when gpg-agent is desired.
 
 The `.bashrc` configuration installed by this repo will automatically start
@@ -127,6 +129,7 @@ Symlinks are installed to point application's per-user paths to
 the config files in this repository as follow:
 
   * `bash`: `~/.bashrc -> bash/bashrc`
+  * `neovim`: `~/.config/neovim/init.vim -> neovim/init.vim`
   * `tmux`: `~/.tmux.conf -> tmux/tmux.conf`
   * `vim`:  `~/.vimrc -> vim/vimrc`
 
@@ -167,20 +170,9 @@ Tmux uses `Prefix` in front of the key combination in place of the `Alt`
 key to avoid intercepting the combination sent to nested programs.
 
 
-## Vim plugins to consider
+## (Neo)Vim plugins to consider
 
   * https://github.com/ctrlpvim/ctrlp.vim
   * https://vimawesome.com/plugin/youcompleteme
   * https://vimawesome.com/plugin/syntastic
-  * https://vimawesome.com/plugin/syntastic
     * https://vimawesome.com/plugin/syntastic
-
-
-## Todo
-Tmux:
-  * Tweak tmux powerline.
-
-Vim:
-  * Conque Shell.
-  * Vim GDB integration.
-  * Vim NodeJs debugger.
