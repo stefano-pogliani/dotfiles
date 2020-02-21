@@ -27,10 +27,27 @@ cd dotfiles
 make install
 
 # ADDITIONAL TASKS:
-#  * Install nvm and stable node
-#  * Install rustup and stable rust
 #  * Generate SSH key and add to places (if needed)
 #  * Generate GPG key and add to places (if needed)
+
+#  -> Install asdf plugins and tools.
+#     First install suggested dependencies for plugins:
+#       https://asdf-vm.com/#/core-manage-asdf-vm?id=plugin-dependencies
+asdf plugin-add helm
+asdf install helm latest
+asdf global helm <...>
+asdf plugin-add kubectl
+asdf install kubectl latest
+asdf global kubectl <...>
+asdf plugin-add fluxctl
+asdf install fluxctl <LATEST> # <-- currently bugged, need to manually pick version
+asdf global fluxctl <...>
+asdf plugin-add k9s
+asdf install k9s latest
+asdf global k9s <...>
+
+#  -> Install rustup and stable rust.
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
 

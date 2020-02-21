@@ -1,4 +1,4 @@
-.DEFAULT_GOAL: install
+.DEFAULT_GOAL := install
 .PHONY: build clean help install uninstall update variables
 
 
