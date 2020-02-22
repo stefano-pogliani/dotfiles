@@ -14,40 +14,36 @@ The following commands will install the configuration from the repository.
 
 On Fedora run:
 ```bash
-sudo dnf install git make tmux neovim xclip powerline-fonts
+sudo dnf install fd-find fzf git make neovim powerline-fonts ripgrep tmux xclip
 pip3 install --user powerline-status
 
 # Initialise global git config:
 git config --global user.name "Stefano Pogliani"
 git config --global user.email "<EMAIL>"
-git config --global core.editor vim
+git config --global core.editor nvim
 
+# Fetch this repo and install configs.
 git clone --recursive https://github.com/stefano-pogliani/dotfiles.git
 cd dotfiles
 make install
 
+# Install all neovim plugins.
+nvim +PlugInstall +UpdateRemotePlugins +qa
+
 # ADDITIONAL TASKS:
 #  * Generate SSH key and add to places (if needed)
 #  * Generate GPG key and add to places (if needed)
+#  -> Install rustup and configure rust.
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup component add clippy rustfmt
+cargo install cargo-audit cargo-outdated
 
 #  -> Install asdf plugins and tools.
 #     First install suggested dependencies for plugins:
 #       https://asdf-vm.com/#/core-manage-asdf-vm?id=plugin-dependencies
-asdf plugin-add helm
-asdf install helm latest
-asdf global helm <...>
-asdf plugin-add kubectl
-asdf install kubectl latest
-asdf global kubectl <...>
-asdf plugin-add fluxctl
-asdf install fluxctl <LATEST> # <-- currently bugged, need to manually pick version
-asdf global fluxctl <...>
-asdf plugin-add k9s
-asdf install k9s latest
-asdf global k9s <...>
-
-#  -> Install rustup and stable rust.
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+asdf plugin-add <TOOL>
+asdf install <TOOL> latest
+asdf global <TOOL> <VERSION>
 ```
 
 
