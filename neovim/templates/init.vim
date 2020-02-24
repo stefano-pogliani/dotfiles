@@ -47,7 +47,8 @@ colorscheme palenight
 
 
 " Extra plugin configs.
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled= 1
+let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_theme = "palenight"
 let g:vim_markdown_folding_disabled = 1
 let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
