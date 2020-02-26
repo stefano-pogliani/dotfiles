@@ -9,6 +9,7 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'hashivim/vim-terraform'
 Plug 'junegunn/fzf'
 Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdtree'

@@ -27,8 +27,9 @@ git clone --recursive https://github.com/stefano-pogliani/dotfiles.git
 cd dotfiles
 make install
 
-# Install all neovim plugins.
+# Install/update all neovim plugins.
 nvim +PlugInstall +UpdateRemotePlugins +qa
+#nvim +PlugUpdate +qa
 
 # ADDITIONAL TASKS:
 #  * Generate SSH key and add to places (if needed)
