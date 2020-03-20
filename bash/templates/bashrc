@@ -51,12 +51,5 @@ export ASDFVM_HOME="${REPO_PATH}/bash/extentions/asdf"
 [ -s "${ASDFVM_HOME}/completions/asdf.bash" ] && . "${ASDFVM_HOME}/completions/asdf.bash"
 
 
-### TODO: deprecate in favour of asdf ###
-# Enable NVM & Bash completion
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-
-
 # Clear possible non-0 $? left by not having files.
 true
