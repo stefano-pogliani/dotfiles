@@ -45,6 +45,11 @@ cargo install cargo-audit cargo-outdated
 asdf plugin-add <TOOL>
 asdf install <TOOL> latest
 asdf global <TOOL> <VERSION>
+
+#  -> For gohugo.io, to support the extended version
+asdf plugin-add hugo https://github.com/beardix/asdf-hugo.git
+asdf install hugo extended-<VERSION>
+asdf global hugo extended-<VERSION>
 ```
 
 
