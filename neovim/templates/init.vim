@@ -8,6 +8,7 @@ source ${REPO_PATH}/neovim/vim-plug/plug.vim
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
+Plug 'cespare/vim-toml'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'junegunn/fzf'
