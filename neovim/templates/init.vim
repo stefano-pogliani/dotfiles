@@ -8,8 +8,8 @@ source ${REPO_PATH}/neovim/vim-plug/plug.vim
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
+Plug 'arcticicestudio/nord-vim'
 Plug 'cespare/vim-toml'
-Plug 'drewtempelmeyer/palenight.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'junegunn/fzf'
 Plug 'plasticboy/vim-markdown'
@@ -45,12 +45,12 @@ imap <silent> <S-Tab> <C-o><<
 " Theme options.
 set background=dark
 set cursorline
-colorscheme palenight
+colorscheme nord
 
 
 " Extra plugin configs.
 let g:airline#extensions#tabline#enabled= 1
 let g:airline#extensions#tabline#show_buffers = 0
-let g:airline_theme = "palenight"
+let g:airline_theme = "nord"
 let g:vim_markdown_folding_disabled = 1
-let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
+let NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '^node_modules$']

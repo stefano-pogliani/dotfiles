@@ -1,0 +1,19 @@
+add_newline = false
+
+[aws]
+disabled = true
+
+[character]
+use_symbol_for_status = true
+
+[cmd_duration]
+disabled = true
+
+[directory]
+truncate_to_repo = false
+
+[line_break]
+disabled = true
+
+[username]
+show_always = true

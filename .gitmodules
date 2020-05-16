@@ -4,3 +4,10 @@
 [submodule "bash/extentions/asdf"]
 	path = bash/extentions/asdf
 	url = https://github.com/asdf-vm/asdf.git
+[submodule "term/gnome/theme-nord"]
+	path = term/gnome/theme-nord
+	url = https://github.com/arcticicestudio/nord-gnome-terminal.git
+	branch = develop
+[submodule "tmux/extentions/tpm"]
+	path = tmux/extentions/tpm
+	url = https://github.com/tmux-plugins/tpm

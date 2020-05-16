@@ -29,6 +29,7 @@ clean:
 	rm init.vim
 
 install: build $(INITRC)
+	nvim +PlugInstall +UpdateRemotePlugins +PlugUpdate +qa
 
 uninstall:
 	[ -L "$(INITRC)" -o "$(FORCE)" == "yes" ] && rm -f "$(INITRC)"

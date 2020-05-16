@@ -1,21 +1,16 @@
 # My env configuration
-Configuration and personalisation files for bash, tmux, vim, and such.
-
-
-## Requirements
-
-  * neovim
-  * powerline-status & powerline-fonts
-  * tmux 2.9a+
+Configuration and personalisation files for bash, tmux, neovim, and others.
 
 
 ## Quick start
 The following commands will install the configuration from the repository.
 
-On Fedora run:
+On Fedora 32 run:
 ```bash
-sudo dnf install fd-find fzf git make neovim powerline-fonts ripgrep tmux xclip
-pip3 install --user powerline-status
+sudo dnf install fd-find fzf git make neovim powerline-fonts ripgrep tmux wl-clipboard
+# Install rust and starship
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install starship
 
 # Initialise global git config:
 git config --global user.name "Stefano Pogliani"
@@ -25,17 +20,14 @@ git config --global core.editor nvim
 # Fetch this repo and install configs.
 git clone --recursive https://github.com/stefano-pogliani/dotfiles.git
 cd dotfiles
+# NOTE: neovim and tmux plugins are installed at the same time.
 make install
 
-# Install/update all neovim plugins.
-nvim +PlugInstall +UpdateRemotePlugins +qa
-#nvim +PlugUpdate +qa
 
 # ADDITIONAL TASKS:
 #  * Generate SSH key and add to places (if needed)
 #  * Generate GPG key and add to places (if needed)
-#  -> Install rustup and configure rust.
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+#  -> Install extend and configure rust.
 rustup component add clippy rustfmt
 cargo install cargo-audit cargo-outdated
 
@@ -107,39 +99,7 @@ git config --global user.signingkey KEY_ID
 
 ## Make interface
 Configurations in this repository are applied to the user with `make`.
-For more information use `make help`:
-```
-make
-  Alias for `make install`
-
-make build
-  Some configuration files are built out of templates.
-
-make clean
-  Deletes the generated configuration files.
-
-make help
-  Prints this message.
-
-make install [FORCE=yes]
-  Installs the configuration for the current user by symlinking to
-  the files in this repository.
-
-  If FORCE is set to yes, existing files are replaced with symlinks.
-
-make reinstall
-  Uninstalls, cleans, and then installs the configuration files.
-
-make uninstall
-  Deletes the symlinks to the configuration files.
-
-make update
-  For components that carry dependencies (like vim bundles),
-  update those dependencies.
-
-make variables
-  Shows the variables used o tweak other actions and their current value.
-```
+For more information use `make help`.
 
 
 ## File organisation
@@ -149,8 +109,8 @@ the config files in this repository as follow:
 
   * `bash`: `~/.bashrc -> bash/bashrc`
   * `neovim`: `~/.config/neovim/init.vim -> neovim/init.vim`
+  * `starship`: `~/.config/starship.toml -> starship/starship.toml`
   * `tmux`: `~/.tmux.conf -> tmux/tmux.conf`
-  * `vim`:  `~/.vimrc -> vim/vimrc`
 
 
 ## Pane navigation
@@ -194,4 +154,3 @@ key to avoid intercepting the combination sent to nested programs.
   * https://github.com/ctrlpvim/ctrlp.vim
   * https://vimawesome.com/plugin/youcompleteme
   * https://vimawesome.com/plugin/syntastic
-    * https://vimawesome.com/plugin/syntastic

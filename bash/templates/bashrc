@@ -30,15 +30,6 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 [ -s /usr/share/fzf/shell/key-bindings.bash ] && . /usr/share/fzf/shell/key-bindings.bash
 
 
-# Load powerline.
-if which powerline-daemon > /dev/null 2> /dev/null; then
-  powerline-daemon -q
-  POWERLINE_BASH_CONTINUATION=1
-  POWERLINE_BASH_SELECT=1
-  . ${POWER_ROOT}/bindings/bash/powerline.sh
-fi
-
-
 # Configure GPG Agent
 #  Ensure the gpg-agent is running.
 gpg-connect-agent /bye
@@ -51,5 +42,10 @@ export ASDFVM_HOME="${REPO_PATH}/bash/extentions/asdf"
 [ -s "${ASDFVM_HOME}/completions/asdf.bash" ] && . "${ASDFVM_HOME}/completions/asdf.bash"
 
 
-# Clear possible non-0 $? left by not having files.
-true
+# Customise shell prompt.
+if which starship >/dev/null 2>/dev/null; then
+  eval "$(starship init bash)"
+fi
+# It seems that starship fails to access $? (see https://github.com/starship/starship/pull/1185).
+# Attempts at using bash-preexec broke everything so we patch manually for now.
+export PROMPT_COMMAND="starship_precmd;${PROMPT_COMMAND/starship_precmd;/}"

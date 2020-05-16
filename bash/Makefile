@@ -10,8 +10,9 @@ endif
 
 # Build deps
 bashrc: templates/bashrc
-	cat templates/bashrc | REPO_PATH="$(REPO)" POWER_ROOT="$(POWER_ROOT)" envsubst \
-		'$${REPO_PATH} $${POWER_ROOT}' > bashrc
+	cat templates/bashrc | \
+		REPO_PATH="$(REPO)" envsubst '$${REPO_PATH}' \
+		> bashrc
 
 
 # Install deps

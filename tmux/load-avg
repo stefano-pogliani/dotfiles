@@ -1,0 +1,2 @@
+#!/bin/bash
+uptime | awk -F "averages?:" '{print $2}' | awk '{ printf "%.1f %.1f %.1f", $1, $2, $3 }'

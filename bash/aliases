@@ -1,7 +1,6 @@
 # Bash aliases file.
 
 alias ll="ls -lah --group-directories-first"
-alias powerline-refresh="powerline-daemon -q -r"
 
 
 # Include workstation specific aliases if present.

@@ -1,7 +1,0 @@
-{
-  "groups": {
-		"branch":       { "fg": "gray9", "bg": "yellow",    "attrs": [] },
-		"branch_dirty": { "fg": "gray9", "bg": "darkred",   "attrs": [] },
-		"branch_clean": { "fg": "gray9", "bg": "darkgreen", "attrs": [] }
-  }
-}

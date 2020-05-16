@@ -10,8 +10,9 @@ endif
 
 # Build deps
 tmux.conf: templates/tmux.conf
-	cat templates/tmux.conf | REPO_PATH="$(REPO)" POWER_ROOT="$(POWER_ROOT)" envsubst \
-		'$${REPO_PATH} $${POWER_ROOT}' > tmux.conf
+	cat templates/tmux.conf | \
+		REPO_PATH="$(REPO)" envsubst '$${REPO_PATH}' \
+		> tmux.conf
 
 
 # Install deps.
@@ -26,6 +27,7 @@ clean:
 	rm tmux.conf
 
 install: build $(TMUX_CONF)
+	extentions/tpm/bin/install_plugins
 
 uninstall:
 	[ -L "$(TMUX_CONF)" -o "$(FORCE)" == "yes" ] && rm -f "$(TMUX_CONF)"
