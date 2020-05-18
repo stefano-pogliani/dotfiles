@@ -48,4 +48,4 @@ if which starship >/dev/null 2>/dev/null; then
 fi
 # It seems that starship fails to access $? (see https://github.com/starship/starship/pull/1185).
 # Attempts at using bash-preexec broke everything so we patch manually for now.
-export PROMPT_COMMAND="starship_precmd;${PROMPT_COMMAND/starship_precmd;/}"
+export PROMPT_COMMAND="starship_precmd;${PROMPT_COMMAND//starship_precmd;/}"
