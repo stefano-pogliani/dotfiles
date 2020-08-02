@@ -1,0 +1,16 @@
+{
+  "debug.console.wordWrap": false,
+  "editor.insertSpaces": true,
+  "editor.minimap.enabled": false,
+  "editor.rulers": [100],
+  "editor.tabSize": 2,
+  "files.watcherExclude": {
+    "**/target/**": true
+  },
+  "window.menuBarVisibility": "toggle",
+  "workbench.colorTheme": "Nord",
+  "[markdown]": {
+    "editor.wordWrap": "off",
+    "editor.quickSuggestions": false
+  }
+}

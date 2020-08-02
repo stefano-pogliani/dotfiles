@@ -32,6 +32,7 @@ install:
 	$(MAKE) -C starship/ install
 	$(MAKE) -C term/ install
 	$(MAKE) -C tmux/ install
+	$(MAKE) -C vscode/ install
 
 
 reinstall: uninstall clean install
@@ -43,11 +44,13 @@ uninstall:
 	$(MAKE) -C starship/ uninstall
 	$(MAKE) -C term/ uninstall
 	$(MAKE) -C tmux/ uninstall
+	$(MAKE) -C vscode/ uninstall
 
 
 update:
 	git submodule update --remote
 	nvim +PlugInstall +UpdateRemotePlugins +PlugUpdate +qa
+	cargo install --force starship
 	tmux/extentions/tpm/bin/update_plugins all
 
 

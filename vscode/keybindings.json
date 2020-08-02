@@ -1,0 +1,135 @@
+// VS Code custom shortcuts.
+// This JSON file support a more flexible parser (and comments).
+[
+  // Navigation (global).
+  {
+    "key": "alt+down",
+    "command": "workbench.action.navigateDown"
+  },
+  {
+    "key": "alt+left",
+    "command": "workbench.action.navigateLeft"
+  },
+  {
+    "key": "alt+pagedown",
+    "command": "workbench.action.nextEditorInGroup",
+  },
+  {
+    "key": "alt+pageup",
+    "command": "workbench.action.previousEditorInGroup",
+  },
+  {
+    "key": "alt+right",
+    "command": "workbench.action.navigateRight"
+  },
+  {
+    "key": "alt+up",
+    "command": "workbench.action.navigateUp"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+
+  // Navigation (side bar, down and up).
+  {
+    "key": "alt+down",
+    "command": "workbench.view.search",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.explorer'"
+  },
+  {
+    "key": "alt+down",
+    "command": "workbench.view.scm",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.search'"
+  },
+  {
+    "key": "alt+down",
+    "command": "workbench.view.debug",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.scm'"
+  },
+  {
+    "key": "alt+down",
+    "command": "workbench.view.extensions",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.debug'"
+  },
+  {
+    "key": "alt+up",
+    "command": "workbench.view.explorer",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.search'"
+  },
+  {
+    "key": "alt+up",
+    "command": "workbench.view.search",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.scm'"
+  },
+  {
+    "key": "alt+up",
+    "command": "workbench.view.scm",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.debug'"
+  },
+  {
+    "key": "alt+up",
+    "command": "workbench.view.debug",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.extensions'"
+  },
+
+  // Navigation (bottom panel, left and right).
+  {
+    "key": "alt+right",
+    "command": "workbench.panel.output.focus",
+    "when": "panelFocus && activePanel == 'workbench.panel.markers'"
+  },
+  {
+    "key": "alt+right",
+    "command": "workbench.panel.repl.view.focus",
+    "when": "panelFocus && activePanel == 'workbench.panel.output'"
+  },
+  {
+    "key": "alt+right",
+    "command": "workbench.panel.terminal.focus",
+    "when": "panelFocus && activePanel == 'workbench.panel.repl'"
+  },
+  {
+    "key": "alt+left",
+    "command": "workbench.panel.markers.view.focus",
+    "when": "panelFocus && activePanel == 'workbench.panel.output'"
+  },
+  {
+    "key": "alt+left",
+    "command": "workbench.panel.output.focus",
+    "when": "panelFocus && activePanel == 'workbench.panel.repl'"
+  },
+  {
+    "key": "ctrl+b alt+left",
+    "command": "workbench.panel.repl.view.focus",
+    "when": "panelFocus && activePanel == 'workbench.panel.terminal'"
+  },
+
+  // Openining and closing editors.
+  {
+    "key": "ctrl+b shift+\\",
+    "command": "workbench.action.splitEditor"
+  },
+  {
+    "key": "ctrl+b -",
+    "command": "workbench.action.splitEditorOrthogonal"
+  },
+
+  // Disable default bindings.
+  {
+    "key": "ctrl+\\",
+    "command": "-workbench.action.splitEditor"
+  },
+  {
+    "key": "ctrl+pagedown",
+    "command": "-workbench.action.nextEditor"
+  },
+  {
+    "key": "ctrl+pageup",
+    "command": "-workbench.action.previousEditor"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "-workbench.view.explorer"
+  }
+]

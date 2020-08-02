@@ -7,10 +7,18 @@ The following commands will install the configuration from the repository.
 
 On Fedora 32 run:
 ```bash
+# Install OS provided packages.
 sudo dnf install fd-find fzf git make neovim powerline-fonts ripgrep tmux wl-clipboard
+
 # Install rust and starship
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo install starship
+
+# Install Visual Studio Code
+# --> Start by adding the official Fedora repo:
+#     https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions
+sudo dnf check-update
+sudo dnf install code
 
 # Initialise global git config:
 git config --global user.name "Stefano Pogliani"
@@ -20,7 +28,7 @@ git config --global core.editor nvim
 # Fetch this repo and install configs.
 git clone --recursive https://github.com/stefano-pogliani/dotfiles.git
 cd dotfiles
-# NOTE: neovim and tmux plugins are installed at the same time.
+# NOTE: Many plugins are installed as part of this.
 make install
 
 
@@ -124,7 +132,7 @@ either not possible or too limiting, in which case use what is
 most appropriate for the program instaed.
 
 The following configuration should be matched:
-```
+```text
 Select pane above:        Alt + ↑
 Select pane below:        Alt + ↓
 Select pane on the left:  Alt + ←
@@ -148,9 +156,7 @@ Move to next word:     Ctrl + →
 Tmux uses `Prefix` in front of the key combination in place of the `Alt`
 key to avoid intercepting the combination sent to nested programs.
 
-
-## (Neo)Vim plugins to consider
-
-  * https://github.com/ctrlpvim/ctrlp.vim
-  * https://vimawesome.com/plugin/youcompleteme
-  * https://vimawesome.com/plugin/syntastic
+### VS Code
+Visual Studio Code has editor groups which are similar to panels.
+Navigation shortcuts are similar to the above but sometimes they change.
+For details check the `vscode/keybindings.json` file.
