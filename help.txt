@@ -1,30 +1,43 @@
 make
-  Alias for `make install`
+  Alias for `make sync`
 
-make build
-  Some configuration files are built out of templates.
-
-make clean
-  Deletes the generated configuration files.
+make deprovision
+  Perform the steps to remove all customisations from the system.
 
 make help
   Prints this message.
 
-make install [FORCE=yes]
-  Installs the configuration for the current user by symlinking to
-  the files in this repository.
+make install
+  Install plugins and extentions.
+
+make provision
+  Perform the steps to configure are new system.
+
+make render
+  Render all templates into usable configuration files.
+
+make symlinks [FORCE=no]
+  Installs the configuration for the current user by symlinking to the files in this repository.
 
   If FORCE is set to yes, existing files are replaced with symlinks.
 
-make reinstall
-  Uninstalls, cleans, and then installs the configuration files.
+make sync
+  Shortcut to make redner + make install.
+  Usefull to update configurations, plugins and extentions on a system that is alredy provisioned.
 
 make uninstall
-  Deletes the symlinks to the configuration files.
+  Uninstall plugins and extentions.
+
+make unlink [FORCE=no]
+  Deletes symlinks created by make symlinks.
+
+  If FORCE is set to yes, targets are deleted even if they are not symlinks.
+
+make unrender
+  Deletes rendered configuration files (symlinks are left untouched).
 
 make update
-  For components that carry dependencies (like vim bundles),
-  update those dependencies.
+  Update git submodules, plugins and extentions.
 
 make variables
   Shows the variables used o tweak other actions and their current value.

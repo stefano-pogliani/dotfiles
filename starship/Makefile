@@ -1,29 +1,24 @@
-.DEFAULT_GOAL := install
-.PHONY: build clean install uninstall
-
+.PHONY: symlinks unlink update
 
 SHIP_DIR  = $(HOME)/.config
 SHIP_CONF = $(SHIP_DIR)/starship.toml
+
+# Check if we should cargo install --force.
+force_install =
 ifeq ($(FORCE), yes)
-	SYMLINK_FORCE = --force
+	force_install = --force
 endif
 
-
-# Install deps
+# "Internal" targets.
 $(SHIP_DIR):
 	mkdir -p $(SHIP_DIR)
 
-# After the symlink is created, update the directory so that make will not run this again.
-$(SHIP_CONF): $(SHIP_DIR)
-	ln $(SYMLINK_FORCE) --no-dereference -s "$(REPO)/starship/starship.toml" "$(SHIP_CONF)"
+# Top-level targets.
+symlinks: $(SHIP_DIR)
+	ln $(force_symlinks) --no-dereference -s "$(REPO)/starship/starship.toml" "$(SHIP_CONF)"
 
-
-# Targets
-build:
-
-clean:
-
-install: $(SHIP_CONF)
-
-uninstall:
+unlink:
 	[ -L "$(SHIP_CONF)" -o "$(FORCE)" == "yes" ] && rm -f "$(SHIP_CONF)"
+
+update:
+	cargo install $(force_install) starship

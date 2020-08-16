@@ -12,11 +12,11 @@
   },
   {
     "key": "alt+pagedown",
-    "command": "workbench.action.nextEditorInGroup",
+    "command": "workbench.action.nextEditorInGroup"
   },
   {
     "key": "alt+pageup",
-    "command": "workbench.action.previousEditorInGroup",
+    "command": "workbench.action.previousEditorInGroup"
   },
   {
     "key": "alt+right",
@@ -27,7 +27,7 @@
     "command": "workbench.action.navigateUp"
   },
   {
-    "key": "ctrl+shift+e",
+    "key": "alt+s",
     "command": "workbench.action.toggleSidebarVisibility"
   },
 

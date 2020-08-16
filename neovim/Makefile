@@ -1,35 +1,32 @@
-.DEFAULT_GOAL := install
-.PHONY: build clean install uninstall
-
+.PHONY: install render symlinks uninstall unlink unrender update
 
 CONFPATH = $(HOME)/.config/nvim
 INITRC = $(CONFPATH)/init.vim
-ifeq ($(FORCE), yes)
-	SYMLINK_FORCE = --force
-endif
 
-
-# Build deps
+# "Internal" targets.
 $(CONFPATH):
 	mkdir "$(CONFPATH)"
 
 init.vim: templates/init.vim
 	cat templates/init.vim | REPO_PATH="$(REPO)" envsubst '$${REPO_PATH}' > init.vim
 
+# Top-level targets.
+install:
+	nvim +PlugInstall +UpdateRemotePlugins +qa
 
-# Install deps
-$(INITRC): $(CONFPATH) init.vim
-	ln $(SYMLINK_FORCE) -s "$(REPO)/neovim/init.vim" "$(INITRC)"
+render: init.vim
 
-
-# Targets
-build: init.vim
-
-clean:
-	rm init.vim
-
-install: build $(INITRC)
-	nvim +PlugInstall +UpdateRemotePlugins +PlugUpdate +qa
+symlinks: $(CONFPATH)
+	ln $(force_symlinks) -s "$(REPO)/neovim/init.vim" "$(INITRC)"
 
 uninstall:
+	nvim +PlugClean +qa
+
+unlink:
 	[ -L "$(INITRC)" -o "$(FORCE)" == "yes" ] && rm -f "$(INITRC)"
+
+unrender:
+	rm init.vim
+
+update:
+	nvim +PlugInstall +PlugUpdate +UpdateRemotePlugins +qa

@@ -1,33 +1,30 @@
-.DEFAULT_GOAL := install
-.PHONY: build clean install uninstall
-
+.PHONY: install render symlinks uninstall unlink unrender update
 
 TMUX_CONF = $(HOME)/.tmux.conf
-ifeq ($(FORCE), yes)
-	SYMLINK_FORCE = --force
-endif
 
-
-# Build deps
+# "Internal" targets.
 tmux.conf: templates/tmux.conf
 	cat templates/tmux.conf | \
 		REPO_PATH="$(REPO)" envsubst '$${REPO_PATH}' \
 		> tmux.conf
 
-
-# Install deps.
-$(TMUX_CONF): tmux.conf
-	ln $(SYMLINK_FORCE) -s "$(REPO)/tmux/tmux.conf" "$(TMUX_CONF)"
-
-
-# Targets
-build: tmux.conf
-
-clean:
-	rm tmux.conf
-
-install: build $(TMUX_CONF)
+# Top-level targets.
+install:
 	extentions/tpm/bin/install_plugins
 
+render: tmux.conf
+
+symlinks:
+	ln $(force_symlinks) -s "$(REPO)/tmux/tmux.conf" "$(TMUX_CONF)"
+
 uninstall:
+	extentions/tpm/bin/clean_plugins
+
+unlink:
 	[ -L "$(TMUX_CONF)" -o "$(FORCE)" == "yes" ] && rm -f "$(TMUX_CONF)"
+
+unrender:
+	rm tmux.conf
+
+update:
+	extentions/tpm/bin/update_plugins all

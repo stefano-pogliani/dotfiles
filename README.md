@@ -105,20 +105,9 @@ git config --global user.signingkey KEY_ID
   * https://tr.opensuse.org/SDB:Using_gpg-agent
 
 
-## Make interface
-Configurations in this repository are applied to the user with `make`.
-For more information use `make help`.
-
-
 ## File organisation
 Configuration files are divided by application they configure.
-Symlinks are installed to point application's per-user paths to
-the config files in this repository as follow:
-
-  * `bash`: `~/.bashrc -> bash/bashrc`
-  * `neovim`: `~/.config/neovim/init.vim -> neovim/init.vim`
-  * `starship`: `~/.config/starship.toml -> starship/starship.toml`
-  * `tmux`: `~/.tmux.conf -> tmux/tmux.conf`
+Symlinks are installed to point applications' user configs to files in this repository.
 
 
 ## Pane navigation
