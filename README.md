@@ -8,7 +8,9 @@ The following commands will install the configuration from the repository.
 On Fedora 32 run:
 ```bash
 # Install OS provided packages.
-sudo dnf install fd-find fzf git make neovim powerline-fonts ripgrep tmux wl-clipboard
+sudo dnf install fd-find fzf git make neovim podman powerline-fonts ripgrep tmux wl-clipboard
+# To make VS Code popups about missing docker go away (docker commands still fail):
+#sudo dnf install podman-docker
 
 # Install rust and starship
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -29,8 +31,9 @@ git config --global core.editor nvim
 git clone --recursive https://github.com/stefano-pogliani/dotfiles.git
 cd dotfiles
 # NOTE: Many plugins are installed as part of this.
-make install
-
+make provision #[PROFILE=work]
+# To update the local configuration on a provisioned system:
+make sync #[PROFILE=work]
 
 # ADDITIONAL TASKS:
 #  * Generate SSH key and add to places (if needed)

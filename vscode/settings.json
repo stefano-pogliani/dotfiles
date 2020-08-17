@@ -1,17 +1,23 @@
 {
+  "cSpell.language": "en-GB",
   "debug.console.wordWrap": false,
   "editor.insertSpaces": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
   "editor.minimap.enabled": false,
   "editor.rulers": [100],
   "editor.tabSize": 2,
   "files.watcherExclude": {
-    "**/target/**": true
+    "**/target/**": true,
+    "**/node_modules/**": true
   },
   "rust.clippy_preference": "on",
   "window.menuBarVisibility": "toggle",
   "workbench.colorTheme": "Nord",
   "[markdown]": {
-    "editor.wordWrap": "off",
-    "editor.quickSuggestions": false
+    "editor.wordWrap": "off"
   }
 }

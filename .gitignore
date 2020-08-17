@@ -4,3 +4,4 @@ bash/bashrc
 neovim/init.vim
 tmux/tmux.conf
 vim/vimrc
+vscode/plugins.txt

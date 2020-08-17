@@ -30,6 +30,10 @@
     "key": "alt+s",
     "command": "workbench.action.toggleSidebarVisibility"
   },
+  {
+    "key": "alt+p",
+    "command": "workbench.action.togglePanel"
+  },
 
   // Navigation (side bar, down and up).
   {
@@ -53,6 +57,11 @@
     "when": "sideBarFocus && activeViewlet == 'workbench.view.debug'"
   },
   {
+    "key": "alt+down",
+    "command": "workbench.view.extension.dockerView",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.extensions'"
+  },
+  {
     "key": "alt+up",
     "command": "workbench.view.explorer",
     "when": "sideBarFocus && activeViewlet == 'workbench.view.search'"
@@ -71,6 +80,11 @@
     "key": "alt+up",
     "command": "workbench.view.debug",
     "when": "sideBarFocus && activeViewlet == 'workbench.view.extensions'"
+  },
+  {
+    "key": "alt+up",
+    "command": "workbench.view.extensions",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.extension.dockerView'"
   },
 
   // Navigation (bottom panel, left and right).
@@ -131,5 +145,13 @@
   {
     "key": "ctrl+shift+e",
     "command": "-workbench.view.explorer"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+1",
+    "command": "-workbench.action.focusFirstEditorGroup"
   }
 ]

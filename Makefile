@@ -5,6 +5,12 @@
 export FORCE = no
 export PROFILE = personal
 export REPO ?= $(CURDIR)
+export TARGET_MACOS = no
+
+# Set TARGET_MACOS if PROFILE == work
+ifeq ($(PROFILE), work)
+	TARGET_MACOS = yes
+endif
 
 # Enable forced flags if FORCE=yes
 force_symlinks = 
@@ -66,6 +72,7 @@ update:
 	@$(MAKE) -C vscode/ update
 
 variables:
-	@echo "Force: $(FORCE)"
-	@echo "Profile: $(PROFILE)"
-	@echo "Repo:  $(REPO)"
+	@echo "Force:        $(FORCE)"
+	@echo "Profile:      $(PROFILE)"
+	@echo "Repo:         $(REPO)"
+	@echo "Target MacOS: $(TARGET_MACOS)"
