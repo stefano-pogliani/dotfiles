@@ -57,11 +57,6 @@
     "when": "sideBarFocus && activeViewlet == 'workbench.view.debug'"
   },
   {
-    "key": "alt+down",
-    "command": "workbench.view.extension.dockerView",
-    "when": "sideBarFocus && activeViewlet == 'workbench.view.extensions'"
-  },
-  {
     "key": "alt+up",
     "command": "workbench.view.explorer",
     "when": "sideBarFocus && activeViewlet == 'workbench.view.search'"
@@ -80,11 +75,6 @@
     "key": "alt+up",
     "command": "workbench.view.debug",
     "when": "sideBarFocus && activeViewlet == 'workbench.view.extensions'"
-  },
-  {
-    "key": "alt+up",
-    "command": "workbench.view.extensions",
-    "when": "sideBarFocus && activeViewlet == 'workbench.view.extension.dockerView'"
   },
 
   // Navigation (bottom panel, left and right).

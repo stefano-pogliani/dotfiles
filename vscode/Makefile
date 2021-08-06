@@ -23,4 +23,5 @@ unlink:
 	[ -L "$(KEYBINDINGS)" -o "$(FORCE)" == "yes" ] && rm -f "$(KEYBINDINGS)"
 	[ -L "$(SETTINGS)" -o "$(FORCE)" == "yes" ] && rm -f "$(SETTINGS)"
 
-update: install
+update: plugins_list
+	cat plugins.txt | while read -r plugin_id; do code --install-extension "$${plugin_id}" --force; done

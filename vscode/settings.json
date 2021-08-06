@@ -1,4 +1,5 @@
 {
+  "cSpell.enabled": false,
   "cSpell.language": "en-GB",
   "debug.console.wordWrap": false,
   "editor.insertSpaces": true,
@@ -14,10 +15,14 @@
     "**/target/**": true,
     "**/node_modules/**": true
   },
-  "rust.clippy_preference": "on",
-  "window.menuBarVisibility": "toggle",
+  "rust.clippy_preference": "off",
+  "rust-client.autoStartRls": false,
   "workbench.colorTheme": "Nord",
   "[markdown]": {
     "editor.wordWrap": "off"
-  }
+  },
+  "[rust]": {
+    "editor.tabSize": 4,
+  },
+  "redhat.telemetry.enabled": false
 }
