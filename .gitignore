@@ -1,4 +1,5 @@
 *.swp
+.profile
 
 bash/bashrc
 neovim/init.vim

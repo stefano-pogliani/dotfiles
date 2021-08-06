@@ -1,16 +1,15 @@
 # My env configuration
+
 Configuration and personalisation files for bash, tmux, neovim, and others.
 
-
 ## Quick start
-The following commands will install the configuration from the repository.
 
+The following commands will install the configuration from the repository.
 On Fedora 32 run:
+
 ```bash
 # Install OS provided packages.
 sudo dnf install fd-find fzf git make neovim podman powerline-fonts ripgrep tmux wl-clipboard
-# To make VS Code popups about missing docker go away (docker commands still fail):
-#sudo dnf install podman-docker
 
 # Install rust and starship
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -55,17 +54,18 @@ asdf install hugo extended-<VERSION>
 asdf global hugo extended-<VERSION>
 ```
 
-
 ## Dependencies
+
 The following tools are required for this configuration to be installed:
 
-  * `envsubst`: used to convert templates into system-specific files.
-  * `make`: used to automate build and installation.
-
+* `envsubst`: used to convert templates into system-specific files.
+* `git`: used to fetch this repo and by some tools it configures (for example `asdf`).
+* `make`: used to automate build and installation.
 
 ## GPG Configuration
+
 GPG is useful to sign various documents, in particular git commits.
-Configuration is now the easiest though, especially when gpg-agent is desired.
+Configuration is not the easiest though, especially when gpg-agent is desired.
 
 The `.bashrc` configuration installed by this repo will automatically start
 a GPG agent and set the `GPG_AGENT_INFO` environment variable to point at it.
@@ -73,6 +73,7 @@ The GPG agent can then be used to cache GPG passphrases and store and load
 them from the OS keyring so you don't have to type them every time.
 
 ### Creating a GPG key
+
 ```bash
 # Check available keys.
 gpg --list-keys
@@ -102,28 +103,28 @@ git config --global user.signingkey KEY_ID
 
 ### References
 
-  * https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work
-  * https://help.github.com/en/articles/signing-commits
-  * https://help.github.com/en/articles/generating-a-new-gpg-key
-  * https://tr.opensuse.org/SDB:Using_gpg-agent
-
+* <https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work>
+* <https://help.github.com/en/articles/signing-commits>
+* <https://help.github.com/en/articles/generating-a-new-gpg-key>
+* <https://tr.opensuse.org/SDB:Using_gpg-agent>
 
 ## File organisation
+
 Configuration files are divided by application they configure.
 Symlinks are installed to point applications' user configs to files in this repository.
 
-
 ## Pane navigation
-Both VIM and TMUX have interfaces that support panes.
-And that means navigating through them!
 
-Here is defined a unified configuration for all pane navigation
-and layout manipulation.
+Both VIM and TMUX have interfaces that support panes.
+And that means navigating across them!
+
+Here is a unified configuration for all pane navigation and layout manipulation.
 As the programs have different features, sometime consistency is
 either not possible or too limiting, in which case use what is
 most appropriate for the program instaed.
 
 The following configuration should be matched:
+
 ```text
 Select pane above:        Alt + ↑
 Select pane below:        Alt + ↓
@@ -149,6 +150,7 @@ Tmux uses `Prefix` in front of the key combination in place of the `Alt`
 key to avoid intercepting the combination sent to nested programs.
 
 ### VS Code
+
 Visual Studio Code has editor groups which are similar to panels.
 Navigation shortcuts are similar to the above but sometimes they change.
 For details check the `vscode/keybindings.json` file.
