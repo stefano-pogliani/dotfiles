@@ -1,11 +1,11 @@
 # My env configuration
 
-Configuration and personalisation files for bash, tmux, neovim, and others.
+Configuration and personalisation files for bash, tmux, and others.
 
 ## Quick start
 
 The following commands will install the configuration from the repository.
-On Fedora 32 run:
+On Fedora 34 run:
 
 ```bash
 # Install OS provided packages.
@@ -61,6 +61,8 @@ The following tools are required for this configuration to be installed:
 * `envsubst`: used to convert templates into system-specific files.
 * `git`: used to fetch this repo and by some tools it configures (for example `asdf`).
 * `make`: used to automate build and installation.
+* `sort`: used to de-duplicate entries to support profile defaults.
+* `xargs`: used to execute commands on list of plugins (and similar).
 
 ## GPG Configuration
 

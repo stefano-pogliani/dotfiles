@@ -25,6 +25,7 @@ help:
 	@cat help.txt
 
 install:
+	@$(MAKE) -C asdf/ install
 	@$(MAKE) -C neovim/ install
 	@$(MAKE) -C term/ install
 	@$(MAKE) -C tmux/ install
@@ -38,6 +39,7 @@ render:
 	@$(MAKE) -C tmux/ render
 
 symlinks:
+	@$(MAKE) -C asdf/ symlinks
 	@$(MAKE) -C bash/ symlinks
 	@$(MAKE) -C neovim/ symlinks
 	@$(MAKE) -C starship/ symlinks
@@ -47,12 +49,14 @@ symlinks:
 sync: render install
 
 uninstall:
+	@$(MAKE) -C asdf/ uninstall
 	@$(MAKE) -C neovim/ uninstall
 	@$(MAKE) -C term/ uninstall
 	@$(MAKE) -C tmux/ uninstall
 	@$(MAKE) -C vscode/ uninstall
 
 unlink:
+	@$(MAKE) -C asdf/ unlink
 	@$(MAKE) -C bash/ unlink
 	@$(MAKE) -C neovim/ unlink
 	@$(MAKE) -C starship/ unlink
@@ -66,6 +70,7 @@ unrender:
 
 update:
 	git submodule update --remote
+	@$(MAKE) -C asdf/ update
 	@$(MAKE) -C neovim/ update
 	@$(MAKE) -C starship/ update
 	@$(MAKE) -C tmux/ update

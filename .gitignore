@@ -1,6 +1,8 @@
 *.swp
 .profile
 
+asdf/.tool-versions
+asdf/plugins.txt
 bash/bashrc
 neovim/init.vim
 tmux/tmux.conf

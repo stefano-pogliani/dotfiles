@@ -1,0 +1,5 @@
+helm
+kubectl
+minikube
+nodejs
+vagrant https://github.com/asdf-community/asdf-hashicorp

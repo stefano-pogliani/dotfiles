@@ -10,18 +10,18 @@ plugins_list:
 
 # Top-level targets.
 install: plugins_list
-	cat plugins.txt | while read -r plugin_id; do code --install-extension "$${plugin_id}"; done
+	cat plugins.txt | xargs -L1 code --install-extension
 
 symlinks:
 	ln $(force_symlinks) -s "$(REPO)/vscode/keybindings.json" "$(KEYBINDINGS)"
 	ln $(force_symlinks) -s "$(REPO)/vscode/settings.json" "$(SETTINGS)"
 
 uninstall: plugins.txt
-	cat plugins.txt | while read -r plugin_id; do code --uninstall-extension "$${plugin_id}"; done
+	cat plugins.txt | xargs -L1 code --uninstall-extension
 
 unlink:
 	[ -L "$(KEYBINDINGS)" -o "$(FORCE)" == "yes" ] && rm -f "$(KEYBINDINGS)"
 	[ -L "$(SETTINGS)" -o "$(FORCE)" == "yes" ] && rm -f "$(SETTINGS)"
 
 update: plugins_list
-	cat plugins.txt | while read -r plugin_id; do code --install-extension "$${plugin_id}" --force; done
+	cat plugins.txt | xargs -L1 -I '{PLUGIN}' code --install-extension "{PLUGIN}" --force

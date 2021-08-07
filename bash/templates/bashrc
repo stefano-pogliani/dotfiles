@@ -37,7 +37,7 @@ export GPG_AGENT_INFO="/run/user/$(id -u)/gnupg/S.gpg-agent:$(pgrep gpg-agent):1
 
 
 # Enable asdf-vm & bash completion for it.
-export ASDFVM_HOME="${REPO_PATH}/bash/extentions/asdf"
+export ASDFVM_HOME="${REPO_PATH}/asdf/repo"
 [ -s "${ASDFVM_HOME}/asdf.sh" ] && . "${ASDFVM_HOME}/asdf.sh"
 [ -s "${ASDFVM_HOME}/completions/asdf.bash" ] && . "${ASDFVM_HOME}/completions/asdf.bash"
 
@@ -46,6 +46,3 @@ export ASDFVM_HOME="${REPO_PATH}/bash/extentions/asdf"
 if which starship >/dev/null 2>/dev/null; then
   eval "$(starship init bash)"
 fi
-# It seems that starship fails to access $? (see https://github.com/starship/starship/pull/1185).
-# Attempts at using bash-preexec broke everything so we patch manually for now.
-export PROMPT_COMMAND="starship_precmd;${PROMPT_COMMAND//starship_precmd;/}"

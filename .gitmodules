@@ -2,7 +2,7 @@
 	path = neovim/vim-plug
 	url = https://github.com/junegunn/vim-plug.git
 [submodule "bash/extentions/asdf"]
-	path = bash/extentions/asdf
+	path = asdf/repo
 	url = https://github.com/asdf-vm/asdf.git
 [submodule "term/gnome/theme-nord"]
 	path = term/gnome/theme-nord
