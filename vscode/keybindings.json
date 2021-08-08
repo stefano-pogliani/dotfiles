@@ -26,6 +26,8 @@
     "key": "alt+up",
     "command": "workbench.action.navigateUp"
   },
+
+  // Navigation (sidebar and pannel).
   {
     "key": "alt+s",
     "command": "workbench.action.toggleSidebarVisibility"
@@ -34,79 +36,10 @@
     "key": "alt+p",
     "command": "workbench.action.togglePanel"
   },
-
-  // Navigation (side bar, down and up).
   {
-    "key": "alt+down",
-    "command": "workbench.view.search",
-    "when": "sideBarFocus && activeViewlet == 'workbench.view.explorer'"
-  },
-  {
-    "key": "alt+down",
-    "command": "workbench.view.scm",
-    "when": "sideBarFocus && activeViewlet == 'workbench.view.search'"
-  },
-  {
-    "key": "alt+down",
-    "command": "workbench.view.debug",
-    "when": "sideBarFocus && activeViewlet == 'workbench.view.scm'"
-  },
-  {
-    "key": "alt+down",
-    "command": "workbench.view.extensions",
-    "when": "sideBarFocus && activeViewlet == 'workbench.view.debug'"
-  },
-  {
-    "key": "alt+up",
-    "command": "workbench.view.explorer",
-    "when": "sideBarFocus && activeViewlet == 'workbench.view.search'"
-  },
-  {
-    "key": "alt+up",
-    "command": "workbench.view.search",
-    "when": "sideBarFocus && activeViewlet == 'workbench.view.scm'"
-  },
-  {
-    "key": "alt+up",
-    "command": "workbench.view.scm",
-    "when": "sideBarFocus && activeViewlet == 'workbench.view.debug'"
-  },
-  {
-    "key": "alt+up",
-    "command": "workbench.view.debug",
-    "when": "sideBarFocus && activeViewlet == 'workbench.view.extensions'"
-  },
-
-  // Navigation (bottom panel, left and right).
-  {
-    "key": "alt+right",
-    "command": "workbench.panel.output.focus",
-    "when": "panelFocus && activePanel == 'workbench.panel.markers'"
-  },
-  {
-    "key": "alt+right",
-    "command": "workbench.panel.repl.view.focus",
-    "when": "panelFocus && activePanel == 'workbench.panel.output'"
-  },
-  {
-    "key": "alt+right",
-    "command": "workbench.panel.terminal.focus",
-    "when": "panelFocus && activePanel == 'workbench.panel.repl'"
-  },
-  {
-    "key": "alt+left",
-    "command": "workbench.panel.markers.view.focus",
-    "when": "panelFocus && activePanel == 'workbench.panel.output'"
-  },
-  {
-    "key": "alt+left",
-    "command": "workbench.panel.output.focus",
-    "when": "panelFocus && activePanel == 'workbench.panel.repl'"
-  },
-  {
-    "key": "ctrl+b alt+left",
-    "command": "workbench.panel.repl.view.focus",
-    "when": "panelFocus && activePanel == 'workbench.panel.terminal'"
+    "key": "alt+t",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
   },
 
   // Openining and closing editors.
@@ -123,6 +56,10 @@
   {
     "key": "ctrl+\\",
     "command": "-workbench.action.splitEditor"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal"
   },
   {
     "key": "ctrl+pagedown",
