@@ -5,7 +5,7 @@ Configuration and personalisation files for bash, tmux, and others.
 ## Quick start
 
 The following commands will install the configuration from the repository.
-On Fedora 34 run:
+Tested on Fedora 34.
 
 ```bash
 # Install OS provided packages.
@@ -40,18 +40,6 @@ make sync #[PROFILE=work]
 #  -> Install extend and configure rust.
 rustup component add clippy rustfmt
 cargo install cargo-audit cargo-outdated
-
-#  -> Install asdf plugins and tools.
-#     First install suggested dependencies for plugins:
-#       https://asdf-vm.com/#/core-manage-asdf-vm?id=plugin-dependencies
-asdf plugin-add <TOOL>
-asdf install <TOOL> latest
-asdf global <TOOL> <VERSION>
-
-#  -> For gohugo.io, to support the extended version
-asdf plugin-add hugo https://github.com/beardix/asdf-hugo.git
-asdf install hugo extended-<VERSION>
-asdf global hugo extended-<VERSION>
 ```
 
 ## Dependencies

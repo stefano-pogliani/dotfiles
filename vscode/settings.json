@@ -15,14 +15,24 @@
     "**/target/**": true,
     "**/node_modules/**": true
   },
+  "redhat.telemetry.enabled": false,
   "rust.clippy_preference": "off",
   "rust-client.autoStartRls": false,
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "workbench.colorTheme": "Nord",
   "[markdown]": {
     "editor.wordWrap": "off"
   },
   "[rust]": {
-    "editor.tabSize": 4,
-  },
-  "redhat.telemetry.enabled": false
+    "editor.tabSize": 4
+  }
 }

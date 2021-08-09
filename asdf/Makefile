@@ -10,7 +10,7 @@ plugins_list:
 tools_list:
   # Profile tools must be first as sort de-duplicates keeping the first entry.
 	echo -n '' > .tool-versions
-	if [ -e plugins.$(PROFILE).txt ]; then cat tools.$(PROFILE).txt > .tool-versions; fi
+	if [ -e tools.$(PROFILE).txt ]; then cat tools.$(PROFILE).txt > .tool-versions; fi
 	cat tools.all.txt >> .tool-versions
 
 # Top-level targets.
