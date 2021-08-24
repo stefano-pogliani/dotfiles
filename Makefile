@@ -3,7 +3,8 @@
 
 # Export variables so sub-makes have them set.
 export FORCE = no
-export PROFILE = $(shell if [ -e .profile ]; then cat .profile; else echo "personal"; fi)
+export PROFILE_ID_FILE := $(HOME)/.dot.profile
+export PROFILE = $(shell if [ -e $(PROFILE_ID_FILE) ]; then cat $(PROFILE_ID_FILE); else echo "personal"; fi)
 export REPO ?= $(CURDIR)
 export TARGET_MACOS = no
 

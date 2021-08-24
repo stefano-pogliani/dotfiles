@@ -36,7 +36,7 @@ cd dotfiles
 
 # Set the appropriate profile for the system.
 # We can override in CLI but this helps to avoid mistakes.
-echo 'work' > .profile
+echo 'work' > ~/.dot.profile
 
 # NOTE: Many plugins are installed as part of this.
 make provision PROFILE=work
