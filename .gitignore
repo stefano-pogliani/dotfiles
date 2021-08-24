@@ -1,6 +1,10 @@
+# Editor files.
 *.swp
+
+# Local system profile.
 .profile
 
+# Generated config files.
 asdf/.tool-versions
 asdf/plugins.txt
 bash/bashrc
@@ -8,3 +12,6 @@ neovim/init.vim
 tmux/tmux.conf
 vim/vimrc
 vscode/plugins.txt
+
+# MacOS Stuff
+.DS_Store

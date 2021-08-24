@@ -18,7 +18,12 @@ Tested on MacOS 10.15.
 cargo install starship
 
 # Install Visual Studio Code
-#TODO(stefano): install vscode
+# 1. Download and install from the official website: https://code.visualstudio.com/docs/setup/mac#_installation
+# 2. Add to PATH for the system:
+cat << EOF >> ~/.system.bashrc
+# Add Visual Studio Code (code)
+export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+EOF
 
 # Initialise global git config:
 git config --global user.name "Stefano Pogliani"
@@ -28,6 +33,11 @@ git config --global core.editor nvim
 # Fetch this repo and install configs.
 git clone --recursive https://github.com/stefano-pogliani/dotfiles.git
 cd dotfiles
+
+# Set the appropriate profile for the system.
+# We can override in CLI but this helps to avoid mistakes.
+echo 'work' > .profile
+
 # NOTE: Many plugins are installed as part of this.
 make provision PROFILE=work
 # To update the local configuration on a provisioned system:

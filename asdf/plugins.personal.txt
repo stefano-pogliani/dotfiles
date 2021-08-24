@@ -1,1 +1,2 @@
 hugo
+vagrant https://github.com/asdf-community/asdf-hashicorp

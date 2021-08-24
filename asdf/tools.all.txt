@@ -1,7 +1,4 @@
-#gohugo 0.68.3
 helm 3.6.3
-#hugo extended-0.80.0
 kubectl 1.21.3
 minikube 1.22.0
 nodejs 16.6.1
-vagrant 2.2.18

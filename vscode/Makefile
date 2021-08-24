@@ -1,7 +1,8 @@
 .PHONY: install symlinks uninstall unlink update plugins_list
 
-KEYBINDINGS = $(HOME)/.config/Code/User/keybindings.json
-SETTINGS = $(HOME)/.config/Code/User/settings.json
+OS_CONF_PATH := $(shell if [ "$(TARGET_MACOS)" == "no" ]; then echo "$(HOME)/.config"; else echo "$(HOME)/Library/Application Support"; fi)
+KEYBINDINGS := $(OS_CONF_PATH)/Code/User/keybindings.json
+SETTINGS := $(OS_CONF_PATH)/Code/User/settings.json
 
 # "Internal" targets.
 plugins_list:

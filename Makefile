@@ -27,7 +27,9 @@ help:
 install:
 	@$(MAKE) -C asdf/ install
 	@$(MAKE) -C neovim/ install
+ifeq ($(TARGET_MACOS), no)
 	@$(MAKE) -C term/ install
+endif
 	@$(MAKE) -C tmux/ install
 	@$(MAKE) -C vscode/ install
 
@@ -51,7 +53,9 @@ sync: render install
 uninstall:
 	@$(MAKE) -C asdf/ uninstall
 	@$(MAKE) -C neovim/ uninstall
+ifeq ($(TARGET_MACOS), no)
 	@$(MAKE) -C term/ uninstall
+endif
 	@$(MAKE) -C tmux/ uninstall
 	@$(MAKE) -C vscode/ uninstall
 
