@@ -32,6 +32,9 @@
   "[markdown]": {
     "editor.wordWrap": "off"
   },
+  "[python]": {
+    "editor.tabSize": 4
+  },
   "[rust]": {
     "editor.tabSize": 4
   }
