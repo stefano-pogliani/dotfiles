@@ -1,3 +1,2 @@
-#gohugo 0.68.3
-#hugo extended-0.80.0
-vagrant 2.2.18
+hugo extended-0.89.4
+vagrant 2.2.19

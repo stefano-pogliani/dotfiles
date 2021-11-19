@@ -1,4 +1,4 @@
-helm 3.6.3
-kubectl 1.21.3
-minikube 1.23.0
-nodejs 16.6.1
+helm 3.7.1
+kubectl 1.22.4
+minikube 1.24.0
+nodejs 17.1.0
