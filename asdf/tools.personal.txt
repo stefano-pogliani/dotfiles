@@ -1,2 +1,3 @@
 hugo extended-0.89.4
-vagrant 2.2.19
+# Officaial vagrant AppImage is broken in Fedora (35).
+#vagrant 2.2.19
