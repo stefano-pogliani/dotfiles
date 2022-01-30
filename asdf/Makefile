@@ -16,7 +16,7 @@ tools_list:
 # Top-level targets.
 install: plugins_list tools_list
   # Errors installing plugins are ignored as re-adding a plugin counts as an error.
-	cat plugins.txt | xargs -L1 $(ASDFVM_HOME)/bin/asdf plugin add || true
+	cat plugins.txt | grep -v '^#' | xargs -L1 $(ASDFVM_HOME)/bin/asdf plugin add || true
 	$(ASDFVM_HOME)/bin/asdf install
 
 symlinks:

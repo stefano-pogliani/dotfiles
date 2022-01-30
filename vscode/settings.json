@@ -16,6 +16,7 @@
     "**/node_modules/**": true
   },
   "redhat.telemetry.enabled": false,
+  "remote.SSH.configFile": "~/.vscode/remote-ssh-config",
   "rust.clippy_preference": "off",
   "rust-client.autoStartRls": false,
   "todo-tree.general.tags": [
