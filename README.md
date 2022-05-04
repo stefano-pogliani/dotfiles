@@ -5,11 +5,11 @@ Configuration and personalisation files for bash, tmux, and others.
 ## Quick start
 
 The following commands will install the configuration from the repository.
-Tested on Fedora 34.
+Tested on Fedora 35.
 
 ```bash
-# Install OS provided packages.
-sudo dnf install fd-find fzf git make neovim podman powerline-fonts ripgrep tmux wl-clipboard
+# Install requirements available from OS packages.
+sudo dnf install fd-find fzf git make neovim podman powerline-fonts ripgrep tmux wl-clipboard xsel
 
 # Install rust and starship
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -26,13 +26,18 @@ git config --global user.name "Stefano Pogliani"
 git config --global user.email "<EMAIL>"
 git config --global core.editor nvim
 
+# Set per-instance configuration (personal can be omitted as the default).
+# Checkout next session for available variables.
+echo 'personal' > "${HOME}/.dot.profile"
+echo 'export TMUX_CLIPBOARD=fedora-x' > "${HOME}/.dot.variables"
+
 # Fetch this repo and install configs.
 git clone --recursive https://github.com/stefano-pogliani/dotfiles.git
 cd dotfiles
 # NOTE: Many plugins are installed as part of this.
-make provision #[PROFILE=work]
+make provision
 # To update the local configuration on a provisioned system:
-make sync #[PROFILE=work]
+make sync
 
 # ADDITIONAL TASKS:
 #  * Generate SSH key and add to places (if needed)
@@ -41,6 +46,17 @@ make sync #[PROFILE=work]
 rustup component add clippy rustfmt
 cargo install cargo-audit cargo-outdated
 ```
+
+## Per-instance variables
+
+The aim of this repo is to provide a consistent experience across multiple PCs and environments.
+To enable that some customisation is supported to transparently tune implementation of some
+features.
+
+| Variable Name | Description | Default |
+| ------------- | ----------- | ------- |
+| `TARGET_MACOS` | The dotfile configuration is being applied on a MacOS instance | `no` |
+| `TMUX_CLIPBOARD` | Tune how tmux will copy text into the system clipboard | `fedora-wayland` |
 
 ## Dependencies
 
@@ -97,6 +113,12 @@ git config --global user.signingkey KEY_ID
 * <https://help.github.com/en/articles/signing-commits>
 * <https://help.github.com/en/articles/generating-a-new-gpg-key>
 * <https://tr.opensuse.org/SDB:Using_gpg-agent>
+
+## Mini road map
+
+* Figure out [Nerd Fonts](https://www.nerdfonts.com/) instead of `powerline-fonts`.
+* Tmux Resurrect?
+* Check out TMUX mouse support and if it is possible to keep text selection.
 
 ## File organisation
 

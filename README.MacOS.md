@@ -37,11 +37,13 @@ cd dotfiles
 # Set the appropriate profile for the system.
 # We can override in CLI but this helps to avoid mistakes.
 echo 'work' > ~/.dot.profile
+echo 'export TARGET_MACOS=yes' > ~/.dot.variables
+echo 'export TMUX_CLIPBOARD=macos' >> ~/.dot.variables
 
 # NOTE: Many plugins are installed as part of this.
-make provision PROFILE=work
+make provision
 # To update the local configuration on a provisioned system:
-make sync PROFILE=work
+make sync
 
 # ADDITIONAL TASKS:
 #  * Generate SSH key and add to places (if needed)

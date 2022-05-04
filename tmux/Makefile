@@ -1,11 +1,12 @@
-.PHONY: install render symlinks uninstall unlink unrender update
+.PHONY: install render symlinks uninstall unlink unrender update variables
 
 TMUX_CONF = $(HOME)/.tmux.conf
+TMUX_CLIPBOARD ?= "fedoara-wayland"
 
 # "Internal" targets.
 tmux.conf: templates/tmux.conf
 	cat templates/tmux.conf | \
-		REPO_PATH="$(REPO)" envsubst '$${REPO_PATH}' \
+		REPO_PATH="$(REPO)" envsubst '$${REPO_PATH} $${TMUX_CLIPBOARD}' \
 		> tmux.conf
 
 # Top-level targets.
@@ -28,3 +29,6 @@ unrender:
 
 update:
 	extentions/tpm/bin/update_plugins all
+
+variables:
+	@echo "TMUX clipboard mode: $(TMUX_CLIPBOARD)"

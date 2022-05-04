@@ -2,15 +2,17 @@
 .PHONY: deprovision help install provision render symlinks sync uninstall unlink unrender update variables
 
 # Export variables so sub-makes have them set.
-export FORCE = no
 export PROFILE_ID_FILE := $(HOME)/.dot.profile
 export PROFILE = $(shell if [ -e $(PROFILE_ID_FILE) ]; then cat $(PROFILE_ID_FILE); else echo "personal"; fi)
+export VARIABLES_FILE  := $(HOME)/.dot.variables
+
+export FORCE = no
 export REPO ?= $(CURDIR)
 export TARGET_MACOS = no
 
-# Set TARGET_MACOS if PROFILE == work
-ifeq ($(PROFILE), work)
-	TARGET_MACOS = yes
+# Load instance variables.
+ifneq (, $(wildcard $(VARIABLES_FILE)))
+	include $(VARIABLES_FILE)
 endif
 
 # Enable forced flags if FORCE=yes
@@ -86,3 +88,4 @@ variables:
 	@echo "Profile:      $(PROFILE)"
 	@echo "Repo:         $(REPO)"
 	@echo "Target MacOS: $(TARGET_MACOS)"
+	@$(MAKE) -C tmux/ variables
