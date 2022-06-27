@@ -4,26 +4,110 @@ MacOS is not my default OS so support for it is hit-and-miss and won't be optimi
 These steps aim to replace the quick start in the `README.md` for MacOS specifics.
 
 The following commands will install the configuration from the repository.
-Tested on MacOS 10.15.
+Tested on MacOS 12.4.
+
+Preliminary tuning:
+
+1. Install Firefox browser and set as default.
+2. Fix keyboard configuration to be more PC:
+   * System Preferences -> Keyboard -> Modifier Keys:
+     * Command = Control
+     * Control = Command
+     * Repeat for each keyboard.
+   * System Preferences -> Keyboard -> Input Sources: add and select `British - PC`.
+     In case of layout issues reset keyboard assistant data and try again:
+     * `sudo rm /Library/Preferences/com.apple.keyboard.plist && sudo shutdown -r now`
+     * <https://apple.stackexchange.com/a/390271>
+3. Tune System Preferences:
+   * General -> Appearance = Dark.
+   * General -> Accent colour = green (or anything you feel).
+   * General -> Show scroll bars = when scrolling.
+   * General -> Click in the scroll bar to = Jump to the spot that's clicked.
+   * General -> Default web browser = Firefox.
+   * General -> Recent items = None
+   * Dock & Menu Bar -> Automatically hide and show the Dock = true
+   * Dock & Menu Bar -> Show recent applications in Dock = false
+   * Mission Control -> Automatically rearrange spaces based on most recent use = false
+   * Mission Control -> Displays have separate spaces = true
+   * Mission Control -> Keyboard and Mouse Shortcuts = all set to do nothing (`-`).
+   * Mission Control -> Hot Corners -> Top Left = Mission Control.
+   * Mission Control -> Hot Corners -> All others = do nothing (`-`).
+   * Siri = Disable all options.
+   * Siri -> Siri Suggestions & Privacy = Disable all options.
+   * Spotlight -> Search Results = Only apps, Definition and System Preferences.
+   * Notifications & Focus -> Notifications = Disable most apps keeping what you want.
+   * Security & Privacy -> Privacy -> Location Services -> Enable Location Services = false.
+   * Security & Privacy -> Privacy -> Apple Advertising -> Personalised Ads = false.
+   * Keyboards -> Shortcuts = Tune presets as desired.
+   * Keyboards -> Shortcuts -> Mission Control -> Mission Control = Alt + Tab.
+   * Keyboards -> Shortcuts -> App Shortcuts -> Add -> Lock Screen = Window + L.
+
+Install [HomeBrew](https://brew.sh/) and essential dependencies:
 
 ```bash
-# Install brew from https://brew.sh/
-#TODO(stefano): copy commands
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval $(/opt/homebrew/bin/brew shellenv)
+brew install --cask itsycal
+brew install --cask iterm2
+brew install --cask visual-studio-code
 
-# Install dependencies with brew.
-#TODO(stefano): list brew deps
+brew install coreutils nvim tmux
+brew install --cask meld
 
-# Install rust and starship
-#TODO(stefano): install rust
-cargo install starship
+brew tap homebrew/cask-fonts
+brew install font-fira-mono-nerd-font
+```
 
-# Install Visual Studio Code
-# 1. Download and install from the official website: https://code.visualstudio.com/docs/setup/mac#_installation
-# 2. Add to PATH for the system:
+Configure iTerm2:
+
+1. Install iTerm2 Nord theme: <https://github.com/arcticicestudio/nord-iterm2#installation>
+2. iTerm2 Preferences tuning:
+   * General -> Closing -> Quit when all windows are closed = true.
+   * General -> Closing -> Confirm closing multiple sessions = true.
+   * [???] General -> Selection -> Applications in terminal may access clipboard = true.
+   * General -> Selection -> Automatically enter copy mode = false.
+   * Profiles -> Terminal -> Scrollback lines = 5000.
+   * Keys -> Remap Modifiers -> Remap control key to == Left Command.
+   * Keys -> Remap Modifiers -> Remap left command key to == Control.
+   * Keys -> Remap Modifiers -> Remap right command key to == Control.
+
+Configure Bash 5.x as the default shell:
+
+```bash
+# Install latest bash from brew.
+eval $(/opt/homebrew/bin/brew shellenv)
+brew install bash bash-completion
+
+# Set homebrew bash as default shell.
+sudo vi /etc/shells
+> # Allow use of Bash 5.x installed with homebrew.
+> /opt/homebrew/bin/bash
+
+chsh -s /opt/homebrew/bin/bash
+
+# Ensure brew is available to bash shells from now on.
+/opt/homebrew/bin/brew shellenv > ~/.system.bashrc
+
+# Extend PATH with new needed locations.
 cat << EOF >> ~/.system.bashrc
+# Favour GNU version of tools over MacOS one
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:\$PATH"
+
 # Add Visual Studio Code (code)
 export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# Enable bash completion.
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+[[ -f /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash ]] && . /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 EOF
+```
+
+Exit the terminal and re-open it, then proceed to dotfiles provisioning:
+
+```bash
+# Install rust and starship
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install starship
 
 # Initialise global git config:
 git config --global user.name "Stefano Pogliani"
@@ -44,6 +128,9 @@ echo 'export TMUX_CLIPBOARD=macos' >> ~/.dot.variables
 make provision
 # To update the local configuration on a provisioned system:
 make sync
+
+# MacOS will only load ~/.profile for interactive shells.
+echo 'source ~/.bashrc' > ~/.profile
 
 # ADDITIONAL TASKS:
 #  * Generate SSH key and add to places (if needed)

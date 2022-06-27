@@ -27,7 +27,7 @@
     "command": "workbench.action.navigateUp"
   },
 
-  // Navigation (sidebar and pannel).
+  // Navigation (sidebar and panel).
   {
     "key": "alt+s",
     "command": "workbench.action.toggleSidebarVisibility"
@@ -42,7 +42,7 @@
     "when": "terminal.active"
   },
 
-  // Openining and closing editors.
+  // Opening and closing editors.
   {
     "key": "ctrl+b shift+\\",
     "command": "workbench.action.splitEditor"
@@ -88,13 +88,50 @@
 
   // Rebind different MacOS defaults.
   {
-    "key": "ctrl+e",
+    "key": "cmd+e",
     "command": "workbench.action.quickOpen",
     "when": "isMac"
   },
   {
     "key": "ctrl+t",
     "command": "workbench.action.showAllSymbols",
+    "when": "isMac"
+  },
+  {
+    "key": "cmd+b shift+\\",
+    "command": "workbench.action.splitEditor",
+    "when": "isMac"
+  },
+  {
+    "key": "cmd+b -",
+    "command": "workbench.action.splitEditorOrthogonal",
+    "when": "isMac"
+  },
+  {
+    "key": "shift+alt+down",
+    "command": "editor.action.insertCursorBelow",
+    "when": "isMac && editorTextFocus"
+  },
+  {
+    "key": "shift+alt+up",
+    "command": "editor.action.insertCursorAbove",
+    "when": "isMac && editorTextFocus"
+  },
+
+  // Un-bind unexpected MacOS defaults.
+  {
+    "key": "cmd+b",
+    "command": "-workbench.action.toggleSidebarVisibility",
+    "when": "isMac"
+  },
+  {
+    "key": "alt+cmd+down",
+    "command": "-editor.action.insertCursorAbove",
+    "when": "isMac"
+  },
+  {
+    "key": "alt+cmd+up",
+    "command": "-editor.action.insertCursorBelow",
     "when": "isMac"
   }
 ]
