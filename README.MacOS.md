@@ -51,7 +51,7 @@ brew install --cask itsycal
 brew install --cask iterm2
 brew install --cask visual-studio-code
 
-brew install coreutils nvim tmux
+brew install coreutils gnupg nvim pinentry-mac tmux
 brew install --cask meld
 
 brew tap homebrew/cask-fonts
@@ -64,8 +64,10 @@ Configure iTerm2:
 2. iTerm2 Preferences tuning:
    * General -> Closing -> Quit when all windows are closed = true.
    * General -> Closing -> Confirm closing multiple sessions = true.
-   * [???] General -> Selection -> Applications in terminal may access clipboard = true.
+   * General -> Selection -> Applications in terminal may access clipboard = true.
    * General -> Selection -> Automatically enter copy mode = false.
+   * Appearance -> Tabs -> Show activity indicator = false.
+   * Appearance -> Tabs -> Show new-output indicator = false.
    * Profiles -> Terminal -> Scrollback lines = 5000.
    * Keys -> Remap Modifiers -> Remap control key to == Left Command.
    * Keys -> Remap Modifiers -> Remap left command key to == Control.
@@ -90,11 +92,14 @@ chsh -s /opt/homebrew/bin/bash
 
 # Extend PATH with new needed locations.
 cat << EOF >> ~/.system.bashrc
-# Favour GNU version of tools over MacOS one
+# Favour GNU version of tools over MacOS one.
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:\$PATH"
 
-# Add Visual Studio Code (code)
+# Add Visual Studio Code (code).
 export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# Enable pip install --user binaries.
+export PATH="/Users/stefano.pogliani/Library/Python/3.9/bin:\$PATH"
 
 # Enable bash completion.
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
@@ -135,4 +140,11 @@ echo 'source ~/.bashrc' > ~/.profile
 # ADDITIONAL TASKS:
 #  * Generate SSH key and add to places (if needed)
 #  * Generate GPG key and add to places (if needed)
+```
+
+## GPG additional changes
+
+```bash
+# Configure the pinentry program for keychain support.
+echo 'pinentry-program /opt/homebrew/bin/pinentry-mac' >> ~/.gnupg/gpg-agent.conf
 ```

@@ -113,6 +113,7 @@ git config --global user.signingkey KEY_ID
 * <https://help.github.com/en/articles/signing-commits>
 * <https://help.github.com/en/articles/generating-a-new-gpg-key>
 * <https://tr.opensuse.org/SDB:Using_gpg-agent>
+* <https://samuelsson.dev/sign-git-commits-on-github-with-gpg-in-macos/>
 
 ## Mini road map
 
