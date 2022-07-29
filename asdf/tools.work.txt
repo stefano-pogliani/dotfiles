@@ -1,1 +1,4 @@
-terraform 1.0.10
+argo 3.3.8
+# Had issues with clusters so keep in sync with most common release.
+kubectl 1.21.14
+terraform 1.2.5

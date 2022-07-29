@@ -21,4 +21,4 @@ unlink:
 	[ -L "$(SHIP_CONF)" -o "$(FORCE)" == "yes" ] && rm -f "$(SHIP_CONF)"
 
 update:
-	cargo install $(force_install) starship
+	cargo install $(force_install) starship --locked

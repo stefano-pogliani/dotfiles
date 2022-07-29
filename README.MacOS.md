@@ -15,9 +15,6 @@ Preliminary tuning:
      * Control = Command
      * Repeat for each keyboard.
    * System Preferences -> Keyboard -> Input Sources: add and select `British - PC`.
-     In case of layout issues reset keyboard assistant data and try again:
-     * `sudo rm /Library/Preferences/com.apple.keyboard.plist && sudo shutdown -r now`
-     * <https://apple.stackexchange.com/a/390271>
 3. Tune System Preferences:
    * General -> Appearance = Dark.
    * General -> Accent colour = green (or anything you feel).
@@ -148,3 +145,14 @@ echo 'source ~/.bashrc' > ~/.profile
 # Configure the pinentry program for keychain support.
 echo 'pinentry-program /opt/homebrew/bin/pinentry-mac' >> ~/.gnupg/gpg-agent.conf
 ```
+
+## Mac messed with the keyboard again
+
+In case of layout issues reset keyboard assistant data and re-identify the keyboard:
+
+1. Disconnect all devices from Mac.
+2. `sudo rm /Library/Preferences/com.apple.keyboardtype.plist`
+3. Reboot.
+4. Reconnect the external keyboard and follow assistant instructions.
+
+Ref: <https://www.techwalla.com/articles/how-to-reset-the-external-keyboard-on-an-apple-mac>
