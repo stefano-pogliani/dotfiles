@@ -65,7 +65,10 @@ Configure iTerm2:
    * General -> Selection -> Automatically enter copy mode = false.
    * Appearance -> Tabs -> Show activity indicator = false.
    * Appearance -> Tabs -> Show new-output indicator = false.
-   * Profiles -> Terminal -> Scrollback lines = 5000.
+   * Profiles -> Default -> Text -> Font = FiraMono Nerd Font.
+   * Profiles -> Default -> Text -> Use ligatures = false.
+   * Profiles -> Default -> Window -> Columns = MAX (1250; write anything above it).
+   * Profiles -> Default -> Terminal -> Scrollback lines = 5000.
    * Keys -> Remap Modifiers -> Remap control key to == Left Command.
    * Keys -> Remap Modifiers -> Remap left command key to == Control.
    * Keys -> Remap Modifiers -> Remap right command key to == Control.
