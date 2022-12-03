@@ -37,5 +37,15 @@
   },
   "[rust]": {
     "editor.tabSize": 4
-  }
+  },
+  "rust-analyzer.completion.autoimport.enable": false,
+  "rust-analyzer.debug.openDebugPane": true,
+  "rust-analyzer.imports.merge.glob": false,
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
+  "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "rust-analyzer.inlayHints.renderColons": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.lens.enable": false,
+  "rust-analyzer.typing.autoClosingAngleBrackets.enable": true
 }
