@@ -1,7 +1,7 @@
 .PHONY: install symlinks uninstall unlink update plugins_list tools_list
 
 # "Internal" targets.
-export ASDFVM_HOME = "$(REPO)/asdf/repo"
+export ASDF_DIR = $(REPO)/asdf/repo
 
 plugins_list:
 	cat plugins.all.txt > plugins.txt
@@ -16,18 +16,19 @@ tools_list:
 # Top-level targets.
 install: plugins_list tools_list
   # Errors installing plugins are ignored as re-adding a plugin counts as an error.
-	cat plugins.txt | grep -v '^#' | xargs -L1 $(ASDFVM_HOME)/bin/asdf plugin add || true
-	$(ASDFVM_HOME)/bin/asdf install
+	cat plugins.txt | grep -v '^#' | xargs -L1 $(ASDF_DIR)/bin/asdf plugin add || true
+	$(ASDF_DIR)/bin/asdf install
 
 symlinks:
 	ln $(force_symlinks) -s "$(REPO)/asdf/.tool-versions" "$(HOME)/.tool-versions"
 
 uninstall: plugins_list tools_list
-	grep -v '^#' .tool-versions | xargs -L1 $(ASDFVM_HOME)/bin/asdf uninstall || true
-	cat plugins.txt | xargs -L1 $(ASDFVM_HOME)/bin/asdf plugin remove || true
+	grep -v '^#' .tool-versions | xargs -L1 $(ASDF_DIR)/bin/asdf uninstall || true
+	cat plugins.txt | xargs -L1 $(ASDF_DIR)/bin/asdf plugin remove || true
 
 unlink:
 	[ -L "$(HOME)/.tool-versions" -o "$(FORCE)" == "yes" ] && rm -f "$(HOME)/.tool-versions"
 
 update:
-	$(ASDFVM_HOME)/bin/asdf plugin update --all
+	$(ASDF_DIR)/bin/asdf update
+	$(ASDF_DIR)/bin/asdf plugin update --all

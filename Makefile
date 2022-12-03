@@ -88,4 +88,4 @@ variables:
 	@echo "Profile:      $(PROFILE)"
 	@echo "Repo:         $(REPO)"
 	@echo "Target MacOS: $(TARGET_MACOS)"
-	@$(MAKE) -C tmux/ variables
+	@$(MAKE) --silent -C tmux/ variables

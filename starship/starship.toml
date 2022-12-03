@@ -1,8 +1,14 @@
 add_newline = false
 
+# Disable dloud related noise.
+[azure]
+disabled = true
 [aws]
 disabled = true
+[gcloud]
+disabled = true
 
+# Tune the prompt look and feel.
 [character]
 error_symbol = "[✖](bold red)"
 

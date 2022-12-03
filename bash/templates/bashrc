@@ -37,9 +37,9 @@ export GPG_AGENT_INFO="/run/user/$(id -u)/gnupg/S.gpg-agent:$(pgrep gpg-agent):1
 
 
 # Enable asdf-vm & bash completion for it.
-export ASDFVM_HOME="${REPO_PATH}/asdf/repo"
-[ -s "${ASDFVM_HOME}/asdf.sh" ] && . "${ASDFVM_HOME}/asdf.sh"
-[ -s "${ASDFVM_HOME}/completions/asdf.bash" ] && . "${ASDFVM_HOME}/completions/asdf.bash"
+export ASDF_DIR="${REPO_PATH}/asdf/repo"
+[ -s "${ASDF_DIR}/asdf.sh" ] && . "${ASDF_DIR}/asdf.sh"
+[ -s "${ASDF_DIR}/completions/asdf.bash" ] && . "${ASDF_DIR}/completions/asdf.bash"
 
 
 # Customise shell prompt.
