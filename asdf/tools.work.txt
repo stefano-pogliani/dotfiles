@@ -1,4 +1,4 @@
-argo 3.3.8
+argo 3.4.4
 # Had issues with clusters so keep in sync with most common release.
 kubectl 1.21.14
-terraform 1.2.5
+terraform 1.3.7
