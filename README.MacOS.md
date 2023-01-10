@@ -72,6 +72,14 @@ Configure iTerm2:
    * Keys -> Remap Modifiers -> Remap control key to == Left Command.
    * Keys -> Remap Modifiers -> Remap left command key to == Control.
    * Keys -> Remap Modifiers -> Remap right command key to == Control.
+3. Configure copy/paste keybindings to match Gnome Terminal:
+   * iTerms -> Settings -> Keys -> Key Binding -> + (at the bottom):
+     * Shift + Ctrl + c == Ignore.
+     * Shift + Ctrl + v == Paste.
+   * System Settings -> Keyboards -> Keyboard Shortcuts -> App Shortcuts -> + (at the bottom):
+     * Application == iTerm.app.
+     * Menu title == `Edit - Copy`.
+     * Keyboard Shortcut: Shift + Ctrl + c.
 
 Configure Bash 5.x as the default shell:
 
