@@ -1,6 +1,6 @@
 add_newline = false
 
-# Disable dloud related noise.
+# Disable cloud related noise.
 [azure]
 disabled = true
 [aws]
@@ -23,3 +23,12 @@ disabled = true
 
 [username]
 show_always = true
+
+[kubernetes]
+disabled = false
+[kubernetes.context_aliases]
+"arn:aws:eks:.*:cluster/(?P<var_cluster>.+)" = "$var_cluster (eks)"
+"gke_.*_(?P<var_cluster>[\\w-]+)" = "$var_cluster (gke)"
+
+[package]
+disabled = true
