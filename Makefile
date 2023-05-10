@@ -29,6 +29,7 @@ help:
 
 install:
 	@$(MAKE) -C asdf/ install
+	@$(MAKE) -C cargo/ install
 	@$(MAKE) -C neovim/ install
 ifeq ($(TARGET_MACOS), no)
 	@$(MAKE) -C term/ install
@@ -55,6 +56,7 @@ sync: render install
 
 uninstall:
 	@$(MAKE) -C asdf/ uninstall
+	@$(MAKE) -C cargo/ uninstall
 	@$(MAKE) -C neovim/ uninstall
 ifeq ($(TARGET_MACOS), no)
 	@$(MAKE) -C term/ uninstall
@@ -78,6 +80,7 @@ unrender:
 update:
 	git submodule update --remote
 	@$(MAKE) -C asdf/ update
+	@$(MAKE) -C cargo/ update
 	@$(MAKE) -C neovim/ update
 	@$(MAKE) -C starship/ update
 	@$(MAKE) -C tmux/ update

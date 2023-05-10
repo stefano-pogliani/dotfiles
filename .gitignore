@@ -8,6 +8,7 @@
 asdf/.tool-versions
 asdf/plugins.txt
 bash/bashrc
+cargo/packages.txt
 neovim/init.vim
 tmux/tmux.conf
 vim/vimrc
