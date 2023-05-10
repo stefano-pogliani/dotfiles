@@ -10,6 +10,7 @@ asdf/plugins.txt
 bash/bashrc
 cargo/packages.txt
 neovim/init.vim
+starship/starship.toml
 tmux/tmux.conf
 vim/vimrc
 vscode/plugins.txt

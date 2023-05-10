@@ -1,0 +1,7 @@
+
+# Work profile additions.
+[kubernetes]
+disabled = false
+[kubernetes.context_aliases]
+"arn:aws:eks:.*:cluster/(?P<var_cluster>.+)" = "$var_cluster (eks)"
+"gke_.*_(?P<var_cluster>[\\w-]+)" = "$var_cluster (gke)"

@@ -1,4 +1,4 @@
-.PHONY: symlinks unlink update
+.PHONY: render symlinks unlink update
 
 SHIP_DIR  = $(HOME)/.config
 SHIP_CONF = $(SHIP_DIR)/starship.toml
@@ -13,7 +13,13 @@ endif
 $(SHIP_DIR):
 	mkdir -p $(SHIP_DIR)
 
+starship.toml: starship.all.toml starship.$(PROFILE).toml
+	cat starship.all.toml > starship.toml
+	cat starship.$(PROFILE).toml >> starship.toml
+
 # Top-level targets.
+render: starship.toml
+
 symlinks: $(SHIP_DIR)
 	ln $(force_symlinks) --no-dereference -s "$(REPO)/starship/starship.toml" "$(SHIP_CONF)"
 

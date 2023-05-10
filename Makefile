@@ -42,6 +42,7 @@ provision: render symlinks install
 render:
 	@$(MAKE) -C bash/ render
 	@$(MAKE) -C neovim/ render
+	@$(MAKE) -C starship/ render
 	@$(MAKE) -C tmux/ render
 
 symlinks:
