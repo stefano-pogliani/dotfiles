@@ -1,5 +1,5 @@
 {
-  "cSpell.language": "en-GB",
+  // Core settings.
   "debug.console.wordWrap": false,
   "editor.insertSpaces": true,
   "editor.quickSuggestions": {
@@ -14,10 +14,22 @@
     "**/target/**": true,
     "**/node_modules/**": true
   },
+  "workbench.colorTheme": "Nord",
+  // Extensions settings.
+  "cSpell.language": "en-GB",
+  "git.openRepositoryInParentFolders": "always",
   "redhat.telemetry.enabled": false,
   "remote.SSH.configFile": "~/.vscode/remote-ssh-config",
-  "rust.clippy_preference": "off",
-  "rust-client.autoStartRls": false,
+  "rust-analyzer.completion.autoimport.enable": false,
+  "rust-analyzer.debug.openDebugPane": true,
+  "rust-analyzer.imports.merge.glob": false,
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
+  "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "rust-analyzer.inlayHints.renderColons": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.lens.enable": false,
+  "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
   "todo-tree.general.tags": [
     "BUG",
     "HACK",
@@ -28,24 +40,14 @@
     "[x]"
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "workbench.colorTheme": "Nord",
   "[markdown]": {
     "editor.wordWrap": "off"
   },
   "[python]": {
-    "editor.tabSize": 4
+    "editor.tabSize": 4,
+    "editor.formatOnType": true
   },
   "[rust]": {
     "editor.tabSize": 4
-  },
-  "rust-analyzer.completion.autoimport.enable": false,
-  "rust-analyzer.debug.openDebugPane": true,
-  "rust-analyzer.imports.merge.glob": false,
-  "rust-analyzer.inlayHints.chainingHints.enable": false,
-  "rust-analyzer.inlayHints.closingBraceHints.enable": false,
-  "rust-analyzer.inlayHints.parameterHints.enable": false,
-  "rust-analyzer.inlayHints.renderColons": false,
-  "rust-analyzer.inlayHints.typeHints.enable": false,
-  "rust-analyzer.lens.enable": false,
-  "rust-analyzer.typing.autoClosingAngleBrackets.enable": true
+  }
 }

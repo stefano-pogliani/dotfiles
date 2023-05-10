@@ -5,14 +5,15 @@ Configuration and personalisation files for bash, tmux, and others.
 ## Quick start
 
 The following commands will install the configuration from the repository.
-Tested on Fedora 35.
+Tested on Fedora 37.
 
 ```bash
 # Install requirements available from OS packages.
-sudo dnf install fd-find fzf git make neovim podman powerline-fonts ripgrep tmux wl-clipboard xsel
+sudo dnf install fd-find fzf git make neovim podman ripgrep tmux wl-clipboard xsel
 
 # Install rust and starship
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.3 -sSf https://sh.rustup.rs | sh
+rustup component add clippy rustfmt
 cargo install starship
 
 # Install Visual Studio Code
@@ -42,8 +43,6 @@ make sync
 # ADDITIONAL TASKS:
 #  * Generate SSH key and add to places (if needed)
 #  * Generate GPG key and add to places (if needed)
-#  -> Install extend and configure rust.
-rustup component add clippy rustfmt
 cargo install cargo-audit cargo-outdated
 ```
 
