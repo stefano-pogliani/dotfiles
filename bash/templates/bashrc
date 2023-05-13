@@ -1,5 +1,5 @@
 # This file was automatically generated from a template.
-# To chage it, update '${REPO_PATH}/bash/templates/bashrc'
+# To change it, update '${REPO_PATH}/bash/templates/bashrc'
 # and re-generate this file with `make build`.
 
 # Source global definitions

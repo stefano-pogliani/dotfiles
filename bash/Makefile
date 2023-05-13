@@ -1,4 +1,4 @@
-.PHONY: render symlinks unlink unrender
+.PHONY: install render symlinks unlink unrender
 
 BASHRC = $(HOME)/.bashrc
 
@@ -9,6 +9,9 @@ bashrc: templates/bashrc
 		> bashrc
 
 # Top-level targets.
+install:
+	mkdir -p "$(HOME)/.gnupg"
+
 render: bashrc
 
 symlinks:

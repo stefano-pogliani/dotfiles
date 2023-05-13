@@ -29,6 +29,7 @@ help:
 
 install:
 	@$(MAKE) -C asdf/ install
+	@$(MAKE) -C bash/ install
 	@$(MAKE) -C cargo/ install
 	@$(MAKE) -C neovim/ install
 ifeq ($(TARGET_MACOS), no)

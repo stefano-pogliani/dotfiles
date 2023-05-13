@@ -14,6 +14,7 @@ install: plugins_list
 	cat plugins.txt | xargs -L1 code --install-extension
 
 symlinks:
+	mkdir -p "$(REPO)/vscode"
 	ln $(force_symlinks) -s "$(REPO)/vscode/keybindings.json" "$(KEYBINDINGS)"
 	ln $(force_symlinks) -s "$(REPO)/vscode/settings.json" "$(SETTINGS)"
 
