@@ -71,6 +71,7 @@ sudo dnf install code
 git config --global user.name "Stefano Pogliani"
 git config --global user.email "<EMAIL>"
 git config --global core.editor nvim
+git config --global init.defaultBranch main
 
 # Set per-instance configuration (personal can be omitted as the default).
 # Checkout next session for available variables.
@@ -146,7 +147,7 @@ vim ~/.gnupg/gpg.conf
 echo 'no-grab' > ~/.gnupg/gpg-agent.conf
 echo 'default-cache-ttl 3600' >> ~/.gnupg/gpg-agent.conf
 
-# Confgure git to sign commits.
+# Configure git to sign commits.
 git config --global commit.gpgsign true
 git config --global user.signingkey KEY_ID
 ```
