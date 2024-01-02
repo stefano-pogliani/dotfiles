@@ -41,7 +41,7 @@ Tested on Fedora 38.
 ```bash
 # Install requirements available from OS packages.
 sudo dnf install \
-  cmake
+  cmake \
   fd-find \
   fzf \
   gcc-c++ \
@@ -59,7 +59,7 @@ sudo dnf install \
 # Install rust and starship
 curl --proto '=https' --tlsv1.3 -sSf https://sh.rustup.rs | sh
 rustup component add clippy rustfmt
-cargo install starship
+cargo install starship --locked
 
 # Install Visual Studio Code
 # --> Start by adding the official Fedora repo:
