@@ -1,5 +1,5 @@
-awscli 2.15.6
-helm 3.13.3
-kubectl 1.29.0
+awscli 2.15.21
+helm 3.14.1
+kubectl 1.29.2
 minikube 1.32.0
-nodejs 21.5.0
+nodejs 21.6.2
