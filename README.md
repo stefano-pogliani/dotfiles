@@ -56,10 +56,9 @@ sudo dnf install \
   wl-clipboard \
   xsel
 
-# Install rust and starship
+# Install rust.
 curl --proto '=https' --tlsv1.3 -sSf https://sh.rustup.rs | sh
 rustup component add clippy rustfmt
-cargo install starship --locked
 
 # Install Visual Studio Code
 # --> Start by adding the official Fedora repo:
