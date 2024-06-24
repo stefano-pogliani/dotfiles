@@ -1,5 +1,6 @@
 awscli
 helm
+k9s
 kubectl
 minikube
 nodejs
