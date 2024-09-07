@@ -32,12 +32,6 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 [ -s /usr/share/fzf/shell/key-bindings.bash ] && . /usr/share/fzf/shell/key-bindings.bash
 
 
-# Configure GPG Agent
-#  Ensure the gpg-agent is running.
-gpg-connect-agent /bye
-export GPG_AGENT_INFO="/run/user/$(id -u)/gnupg/S.gpg-agent:$(pgrep gpg-agent):1"
-
-
 # Enable asdf-vm & bash completion for it.
 export ASDF_DIR="${REPO_PATH}/asdf/repo"
 [ -s "${ASDF_DIR}/asdf.sh" ] && . "${ASDF_DIR}/asdf.sh"

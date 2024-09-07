@@ -14,6 +14,7 @@ These options are harder to automate and rarely change after first install so ar
 2. Have a look at available `Settings` to adjust as desired.
 3. Log into Firefox accounts so tabs, bookmarks and other get synced and are available.
 4. Configure Firefox:
+   - Disable built-in advertise tracking.
    - Have a look at Firefox settings and adjust as desired.
    - Customise the toolbar to:
     `<-, ->, Home, Refresh, URL Bar, Bookmarks, Downloads, Account, Extensions`.
@@ -112,43 +113,58 @@ The following tools are required for this configuration to be installed:
 - `sort`: used to de-duplicate entries to support profile defaults.
 - `xargs`: used to execute commands on list of plugins (and similar).
 
-## GPG Configuration
+## Git Commit sining
 
-GPG is useful to sign various documents, in particular git commits.
-Configuration is not the easiest though, especially when gpg-agent is desired.
+I've chosen to use (move to) SSH for commit signing (because GPG is a mess with keys).
 
-The `.bashrc` configuration installed by this repo will automatically start
-a GPG agent and set the `GPG_AGENT_INFO` environment variable to point at it.
-The GPG agent can then be used to cache GPG passphrases and store and load
-them from the OS keyring so you don't have to type them every time.
+To set it up we'll need:
 
-### Creating a GPG key
+1. An SSH key for signing.
+2. A list of SSH key we consider valid for sining.
+3. The proper config for `git`.
 
 ```bash
-# Check available keys.
-gpg --list-keys
+git config --global gpg.format ssh
+git config --global user.signingKey ~/.ssh/git_sign.pub
+git config --global gpg.ssh.allowedSignersFile ~/.config/git/allowed_signers
 
-# Create a new key:
-#  - Pick a good passphrase as that will be stored in a keyring.
-#  - Pick 4096 bits for the key size.
-gpg --gen-key
-
-# Get the new key ID and export the public key to GitHub:
-gpg --list-secret-keys --keyid-format LONG
-gpg --export --armor KEY_ID
-
-# Configure GPG with the `use-agent` directive:
-vim ~/.gnupg/gpg.conf
-
-# Create the GPG agent configuration:
-#  We at least want the following settings.
-#  Advanced configurations are also possible.
-echo 'no-grab' > ~/.gnupg/gpg-agent.conf
-echo 'default-cache-ttl 3600' >> ~/.gnupg/gpg-agent.conf
-
-# Configure git to sign commits.
 git config --global commit.gpgsign true
-git config --global user.signingkey KEY_ID
+```
+
+The git allowed signers format is:
+
+```text
+<COMMITER EMAIL> <SSH PUBLIC KEY>
+```
+
+### Creating an SSH sining key
+
+Generate a new SSH key with passphrase:
+
+```bash
+$ ssh-keygen -C 'SP Git Signature' # If not default: -t ed25519
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/stefano/.ssh/id_ed25519): /home/stefano/.ssh/git_sign
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/stefano/.ssh/git_sign
+Your public key has been saved in /home/stefano/.ssh/git_sign.pub
+The key fingerprint is:
+...
+The key's randomart image is:
+...
+```
+
+It is possible to remove passphrases from keys:
+
+```bash
+ssh-keygen -f ~/.ssh/git_sign -p
+```
+
+To re-derive the public key from a private key:
+
+```bash
+ssh-keygen -f ~/.ssh/git_sign -y
 ```
 
 ### References
