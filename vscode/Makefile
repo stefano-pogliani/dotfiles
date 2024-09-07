@@ -26,4 +26,4 @@ unlink:
 	[ -L "$(SETTINGS)" -o "$(FORCE)" == "yes" ] && rm -f "$(SETTINGS)"
 
 update: plugins_list
-	cat plugins.txt | xargs -L1 -I '{PLUGIN}' code --install-extension "{PLUGIN}" --force
+	cat plugins.txt | xargs -I '{PLUGIN}' code --install-extension "{PLUGIN}" --force

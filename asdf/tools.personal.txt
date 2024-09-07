@@ -1,1 +1,1 @@
-hugo extended-0.126.1
+hugo extended-0.134.1
