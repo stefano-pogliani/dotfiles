@@ -113,14 +113,14 @@ The following tools are required for this configuration to be installed:
 - `sort`: used to de-duplicate entries to support profile defaults.
 - `xargs`: used to execute commands on list of plugins (and similar).
 
-## Git Commit sining
+## Git Commit signing
 
 I've chosen to use (move to) SSH for commit signing (because GPG is a mess with keys).
 
 To set it up we'll need:
 
 1. An SSH key for signing.
-2. A list of SSH key we consider valid for sining.
+2. A list of SSH key we consider valid for signing.
 3. The proper config for `git`.
 
 ```bash
@@ -134,10 +134,10 @@ git config --global commit.gpgsign true
 The git allowed signers format is:
 
 ```text
-<COMMITER EMAIL> <SSH PUBLIC KEY>
+<AUTHOR EMAIL> <SSH PUBLIC KEY>
 ```
 
-### Creating an SSH sining key
+### Creating an SSH signing key
 
 Generate a new SSH key with passphrase:
 
@@ -194,7 +194,7 @@ And that means navigating across them!
 Here is a unified configuration for all pane navigation and layout manipulation.
 As the programs have different features, sometime consistency is
 either not possible or too limiting, in which case use what is
-most appropriate for the program instaed.
+most appropriate for the program instead.
 
 The following configuration should be matched:
 
