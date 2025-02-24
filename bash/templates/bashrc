@@ -27,15 +27,14 @@ export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
 [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 
-# Configure fzf and bash intefartion if available.
+# Configure fzf and bash integration if available.
 export FZF_DEFAULT_COMMAND='fd --type f'
 [ -s /usr/share/fzf/shell/key-bindings.bash ] && . /usr/share/fzf/shell/key-bindings.bash
 
 
 # Enable asdf-vm & bash completion for it.
-export ASDF_DIR="${REPO_PATH}/asdf/repo"
-[ -s "${ASDF_DIR}/asdf.sh" ] && . "${ASDF_DIR}/asdf.sh"
-[ -s "${ASDF_DIR}/completions/asdf.bash" ] && . "${ASDF_DIR}/completions/asdf.bash"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+asdf --version > /dev/null && . <(asdf completion bash)
 
 
 # Customise shell prompt.

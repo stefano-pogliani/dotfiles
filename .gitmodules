@@ -1,9 +1,6 @@
 [submodule "neovim/vim-plug"]
 	path = neovim/vim-plug
 	url = https://github.com/junegunn/vim-plug.git
-[submodule "asdf/repo"]
-	path = asdf/repo
-	url = https://github.com/asdf-vm/asdf.git
 [submodule "term/gnome/theme-nord"]
 	path = term/gnome/theme-nord
 	url = https://github.com/arcticicestudio/nord-gnome-terminal.git

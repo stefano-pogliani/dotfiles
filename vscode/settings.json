@@ -10,6 +10,7 @@
   "editor.minimap.enabled": false,
   "editor.rulers": [100],
   "editor.tabSize": 2,
+  "editor.unicodeHighlight.nonBasicASCII": false,
   "files.watcherExclude": {
     "**/target/**": true,
     "**/node_modules/**": true
@@ -50,4 +51,7 @@
   "[rust]": {
     "editor.tabSize": 4
   },
+
+  // Disable the reason I will switch to VSCodium
+  "chat.commandCenter.enabled": false,
 }

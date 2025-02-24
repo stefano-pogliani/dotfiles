@@ -30,7 +30,7 @@ help:
 install:
 	@$(MAKE) -C asdf/ install
 	@$(MAKE) -C bash/ install
-	@$(MAKE) -C cargo/ install
+	@$(MAKE) -C cargo/ update
 	@$(MAKE) -C neovim/ install
 	@$(MAKE) -C starship/ update
 ifeq ($(TARGET_MACOS), no)

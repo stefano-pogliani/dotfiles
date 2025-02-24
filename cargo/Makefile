@@ -6,9 +6,6 @@ packages_list:
 	if [ -e packages.$(PROFILE).txt ]; then cat packages.$(PROFILE).txt >> packages.txt; fi
 
 # Top-level targets.
-install: packages_list
-	cat packages.txt | xargs -L1 cargo install
-
 uninstall: packages_list
 	cat packages.txt | xargs -L1 cargo uninstall
 
