@@ -46,10 +46,10 @@ Install [HomeBrew](https://brew.sh/) and essential dependencies:
 eval $(/opt/homebrew/bin/brew shellenv)
 brew install --cask itsycal
 brew install --cask iterm2
-brew install --cask visual-studio-code
+brew install --cask vscodium
+#brew install --cask visual-studio-code
 
 brew install coreutils gnupg nvim pinentry-mac tmux
-brew install --cask meld
 
 brew tap homebrew/cask-fonts
 brew install font-fira-mono-nerd-font

@@ -94,4 +94,9 @@ variables:
 	@echo "Profile:      $(PROFILE)"
 	@echo "Repo:         $(REPO)"
 	@echo "Target MacOS: $(TARGET_MACOS)"
+	@echo
+	@echo "Tmux variables:"
 	@$(MAKE) --silent -C tmux/ variables
+	@echo
+	@echo "VS Code/Codium variables:"
+	@$(MAKE) --silent -C vscode/ variables

@@ -32,4 +32,4 @@ update:
 	extentions/tpm/bin/update_plugins all
 
 variables:
-	@echo "TMUX clipboard mode: $(TMUX_CLIPBOARD)"
+	@echo "  Clipboard mode: $(TMUX_CLIPBOARD)"

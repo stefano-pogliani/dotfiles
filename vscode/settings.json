@@ -58,5 +58,7 @@
     "generateDocstring": false,
     "generateSymbol": false,
     "implementAbstractClasses": false
-  }
+  },
+  "workbench.enableExperiments": false,
+  "workbench.settings.enableNaturalLanguageSearch": false
 }
