@@ -9,20 +9,26 @@
   },
   "editor.minimap.enabled": false,
   "editor.rulers": [100],
-  "editor.tabSize": 2,
+  "editor.tabSize": 4,
   "editor.unicodeHighlight.nonBasicASCII": false,
-  "files.watcherExclude": {
-    "**/target/**": true,
-    "**/node_modules/**": true
-  },
   "workbench.colorTheme": "Nord",
-  // Extensions settings.
+
+  // Ignore known large trees for different languages.
+  "files.watcherExclude": {
+    "**/.venv/**": true,
+    "**/node_modules/**": true,
+    "**/target/**": true
+  },
+
+  // Extensions settings: most.
   "cSpell.language": "en-GB",
   "git.openRepositoryInParentFolders": "always",
   "redhat.telemetry.enabled": false,
   "remote.SSH.configFile": "~/.vscode/remote-ssh-config",
+  "todo-tree.tree.autoRefresh": false,
+
+  // Extensions settings: Rust language server.
   "rust-analyzer.completion.autoimport.enable": false,
-  "rust-analyzer.debug.openDebugPane": true,
   "rust-analyzer.imports.merge.glob": false,
   "rust-analyzer.inlayHints.chainingHints.enable": false,
   "rust-analyzer.inlayHints.closingBraceHints.enable": false,
@@ -30,28 +36,27 @@
   "rust-analyzer.inlayHints.renderColons": false,
   "rust-analyzer.inlayHints.typeHints.enable": false,
   "rust-analyzer.lens.enable": false,
-  "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
-  "todo-tree.general.tags": [
-    "BUG",
-    "HACK",
-    "FIXME",
-    "TODO",
-    "XXX",
-    "[ ]",
-    "[x]"
-  ],
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+
+  // Per-language settings.
   "[markdown]": {
+    "editor.tabSize": 2,
     "editor.wordWrap": "off"
   },
   "[python]": {
-    "editor.tabSize": 4,
     "editor.formatOnType": true
-  },
-  "[rust]": {
-    "editor.tabSize": 4
   },
 
   // Disable the reason I will switch to VSCodium
+  "chat.agent.enabled": false,
+  "chat.agent.maxRequests": 0,
   "chat.commandCenter.enabled": false,
+  "chat.extensionTools.enabled": false,
+  "chat.notifyWindowOnConfirmation": false,
+  "remote.SSH.experimental.chat": false,
+  "telemetry.feedback.enabled": false,
+  "python.analysis.aiCodeActions": {
+    "generateDocstring": false,
+    "generateSymbol": false,
+    "implementAbstractClasses": false
+  }
 }
