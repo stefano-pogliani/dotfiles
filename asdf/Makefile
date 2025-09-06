@@ -1,27 +1,29 @@
 .PHONY: install symlinks uninstall unlink update plugins_list tools_list
 
 # "Internal" targets.
+ASDF_VERSION := 0.18.0
 ARCH := $(shell if [ `arch` == "x86_64" ]; then echo "amd64"; else arch; fi)
 PLATFORM := $(shell if [ "$(TARGET_MACOS)" == "no" ]; then echo "linux"; else echo "darwin"; fi)
+ASDF_ARCHIVE_URL := "https://github.com/asdf-vm/asdf/releases/download/v$(ASDF_VERSION)/asdf-v$(ASDF_VERSION)-$(PLATFORM)-$(ARCH).tar.gz"
 
 plugins_list:
 	cat plugins.all.txt > plugins.txt
 	if [ -e plugins.$(PROFILE).txt ]; then cat plugins.$(PROFILE).txt >> plugins.txt; fi
 
 tools_list:
-  # Profile tools must be first as sort de-duplicates keeping the first entry.
+    # Profile tools must be first as sort de-duplicates keeping the first entry.
 	echo -n '' > .tool-versions
 	if [ -e tools.$(PROFILE).txt ]; then cat tools.$(PROFILE).txt > .tool-versions; fi
 	cat tools.all.txt >> .tool-versions
 
 # Top-level targets.
 install: plugins_list tools_list
-  # First install ASDF Go binary.
-	curl --location --output "$(HOME)/bin/asdf.tar.gz" "https://github.com/asdf-vm/asdf/releases/download/v0.16.4/asdf-v0.16.4-$(PLATFORM)-$(ARCH).tar.gz"
+    # First install ASDF Go binary.
+	curl --location --output "$(HOME)/bin/asdf.tar.gz" "$(ASDF_ARCHIVE_URL)"
 	tar -C "$(HOME)/bin" -xf "$(HOME)/bin/asdf.tar.gz"
 	rm -r "$(HOME)/bin/asdf.tar.gz"
 
-  # Errors installing plugins are ignored as re-adding a plugin counts as an error.
+    # Errors installing plugins are ignored as re-adding a plugin counts as an error.
 	cat plugins.txt | grep -v '^#' | xargs -L1 asdf plugin add || true
 	asdf install
 
@@ -36,4 +38,6 @@ unlink:
 	[ -L "$(HOME)/.tool-versions" -o "$(FORCE)" == "yes" ] && rm -f "$(HOME)/.tool-versions"
 
 update:
+    # Check if ASDF itself needs updating.
+	@if asdf version | grep -v "v$(ASDF_VERSION)"; then $(MAKE) install; fi
 	asdf plugin update --all

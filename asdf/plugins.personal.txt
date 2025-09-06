@@ -1,3 +1,1 @@
 hugo https://github.com/beardix/asdf-hugo.git
-# Official vagrant AppImage is broken in Fedora (35).
-#vagrant https://github.com/asdf-community/asdf-hashicorp

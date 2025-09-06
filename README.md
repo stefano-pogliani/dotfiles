@@ -22,16 +22,28 @@ These options are harder to automate and rarely change after first install so ar
    - In `about:config` change the following settings:
 
      ```text
-     extensions.activeThemeID:         lush-bold-colorway@mozilla.org
-     toolkit.tabbox.switchByScrolling: true
+     browser.ml.chat.enabled:               false
+     browser.ml.enable:                     false
+     browser.urlbar.quicksuggest.mlEnabled: false
+     extensions.activeThemeID:              lush-bold-colorway@mozilla.org
+     extensions.ml.enabled:                 false
+     toolkit.tabbox.switchByScrolling:      true
      ```
 
-5. Install the following Firefox Extensions: Psono, Forget Me Not, Deyond20, uBlock Origin.
+5. Install the following Firefox Extensions:
+   - Beyond20
+   - Forget Me Not
+   - GNOME Shell integration
+   - Psono
+   - uBlock Origin
+   - Wallabag
 6. Install Gnome Tweaks and tune options.
    - Check available options and adjust as desired.
    - Set the "legacy theme" to the dark theme variant.
 7. Install the Extensions app and the following Gnome extensions:
-   `AppIndicator and KStatusNotifierItem Support, Caffeine/Espresso, Removable Drive Menu`.
+   - AppIndicator and KStatusNotifierItem Support
+   - Caffeine/Espresso
+   - Removable Drive Menu
 8. Pin apps on the "start menu": Firefox, Terminal, VS Code, Files.
 
 ## Terminal/Development
@@ -61,11 +73,18 @@ sudo dnf install \
 curl --proto '=https' --tlsv1.3 -sSf https://sh.rustup.rs | sh
 rustup component add clippy rustfmt
 
-# Install Visual Studio Code
+# [PREFERRED] Install VS Codium
+#   <https://vscodium.com/#install-on-fedora-rhel-centos-rockylinux-opensuse-rpm-package>
+sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
+printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h\n" \
+  | sudo tee -a /etc/yum.repos.d/vscodium.repo
+sudo dnf install codium
+
+# [ALTERNATIVE] Install Visual Studio Code
 # --> Start by adding the official Fedora repo:
 #     https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions
-sudo dnf check-update
-sudo dnf install code
+#sudo dnf check-update
+#sudo dnf install code
 
 # Initialise global git config:
 git config --global user.name "Stefano Pogliani"
@@ -76,7 +95,6 @@ git config --global init.defaultBranch main
 # Set per-instance configuration (personal can be omitted as the default).
 # Checkout next session for available variables.
 echo 'personal' > "${HOME}/.dot.profile"
-echo 'export TMUX_CLIPBOARD=fedora-x' > "${HOME}/.dot.variables"
 
 # Fetch this repo and install configs.
 git clone --recursive https://github.com/stefano-pogliani/dotfiles.git
@@ -89,7 +107,6 @@ make sync
 # ADDITIONAL TASKS:
 #  * Generate SSH key and add to places (if needed)
 ssh-keygen -t ed25519 -C "$USER@$HOST"
-#  * Generate GPG key and add to places (if needed)
 ```
 
 ## Per-instance variables
