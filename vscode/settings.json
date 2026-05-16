@@ -49,16 +49,23 @@
   // Disable the reason I will switch to VSCodium
   "chat.agent.enabled": false,
   "chat.agent.maxRequests": 0,
-  "chat.commandCenter.enabled": false,
+  "chat.checkpoints.enabled": false,
+  "chat.detectParticipant.enabled": false,
+  "chat.disableAIFeatures": true,
   "chat.extensionTools.enabled": false,
-  "chat.notifyWindowOnConfirmation": false,
+  "chat.notifyWindowOnConfirmation": "off",
+  "chat.tools.terminal.enableAutoApprove": false,
   "remote.SSH.experimental.chat": false,
   "telemetry.feedback.enabled": false,
+  "terminal.integrated.initialHint": false,
+  "workbench.enableExperiments": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.navigationControl.enabled": false,
+  "workbench.settings.enableNaturalLanguageSearch": false,
+
   "python.analysis.aiCodeActions": {
     "generateDocstring": false,
     "generateSymbol": false,
     "implementAbstractClasses": false
-  },
-  "workbench.enableExperiments": false,
-  "workbench.settings.enableNaturalLanguageSearch": false
+  }
 }

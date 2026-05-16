@@ -33,9 +33,6 @@ install:
 	@$(MAKE) -C cargo/ update
 	@$(MAKE) -C neovim/ install
 	@$(MAKE) -C starship/ update
-ifeq ($(TARGET_MACOS), no)
-	@$(MAKE) -C term/ install
-endif
 	@$(MAKE) -C tmux/ install
 	@$(MAKE) -C vscode/ install
 
@@ -61,9 +58,6 @@ uninstall:
 	@$(MAKE) -C asdf/ uninstall
 	@$(MAKE) -C cargo/ uninstall
 	@$(MAKE) -C neovim/ uninstall
-ifeq ($(TARGET_MACOS), no)
-	@$(MAKE) -C term/ uninstall
-endif
 	@$(MAKE) -C tmux/ uninstall
 	@$(MAKE) -C vscode/ uninstall
 
