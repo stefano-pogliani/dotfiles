@@ -39,6 +39,10 @@ Preliminary tuning:
    * Keyboards -> Shortcuts -> Mission Control -> Mission Control = Alt + Tab.
    * Keyboards -> Shortcuts -> App Shortcuts -> Add -> Lock Screen = Window + L.
 
+## Provision MacOS
+
+### 1. Homebrew and core utils
+
 Install [HomeBrew](https://brew.sh/) and essential dependencies:
 
 ```bash
@@ -49,11 +53,41 @@ brew install --cask iterm2
 brew install --cask vscodium
 #brew install --cask visual-studio-code
 
-brew install coreutils gnupg nvim pinentry-mac tmux
-
-brew tap homebrew/cask-fonts
-brew install font-fira-mono-nerd-font
+brew install coreutils gnupg nvim tmux
+brew install --cask font-fira-mono-nerd-font
 ```
+
+### 2. Terminal configuration
+
+Install and configure [Tabby](https://tabby.sh/) terminal.
+
+* Application -> Shell Integration = on.
+* Application -> Enable analytics = off.
+* Application -> Automatic Updates = off.
+* Application -> Enable animations = off.
+* Profiles -> Default profile for new tabs = bash (after install below).
+* Terminal -> Mouse -> Require a key to click on links = Ctrl.
+* Terminal -> Clipboard -> Copy on select = off.
+* Terminal -> Clipboard -> Copy with formatting = off.
+* Terminal -> Clipboard -> Bracketed paste = off.
+* Terminal -> Clipboard -> Warn on multi-line paste = on.
+* Terminal -> Clipboard -> Replace line breaks with spaces = off.
+* Terminal -> Clipboard -> Trim whitespace and newlines = off.
+* Terminal -> Sound -> Terminal bell = off.
+* Terminal -> Startup -> Auto-open a terminal on app start = on.
+* Colour scheme = Nord.
+* Hotkeys -> Copy to clipboard -> Add = Ctrl + Shift + C.
+* Hotkeys -> Copy to clipboard -> Remove = Ctrl + C.
+* Hotkeys -> Paste from clipboard -> Add = Ctrl + Shift + V.
+* Hotkeys -> Intelligent Ctrl-C = Ctrl + C.
+* Hotkeys -> Split to the right -> Clear all.
+* Hotkeys -> Split to the bottom -> Clear all.
+* Window -> Window -> Hide tray icon = off.
+* Window -> Tabs -> Show tabs in fullscreen mode = on.
+* Window -> Tabs -> Close the window after closing the last tab = on.
+
+<details>
+<summary>Maybe deprecated iTerm setup</summary>
 
 Configure iTerm2:
 
@@ -80,6 +114,10 @@ Configure iTerm2:
      * Application == iTerm.app.
      * Menu title == `Edit - Copy`.
      * Keyboard Shortcut: Shift + Ctrl + c.
+
+</details>
+
+### 3. Install and switch to bash shell
 
 Configure Bash 5.x as the default shell:
 
@@ -113,7 +151,12 @@ export PATH="/Users/stefano.pogliani/Library/Python/3.9/bin:\$PATH"
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 [[ -f /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash ]] && . /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 EOF
+
+# MacOS will only load ~/.profile for interactive shells.
+echo 'source ~/.bashrc' > ~/.profile
 ```
+
+### 4. Final provisioning with dotfiles
 
 Exit the terminal and re-open it, then proceed to dotfiles provisioning:
 
@@ -121,6 +164,7 @@ Exit the terminal and re-open it, then proceed to dotfiles provisioning:
 # Install rust and starship
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo install starship
+mkdir ~/.config ~/bin
 
 # Initialise global git config:
 git config --global user.name "Stefano Pogliani"
@@ -136,25 +180,16 @@ cd dotfiles
 echo 'work' > ~/.dot.profile
 echo 'export TARGET_MACOS=yes' > ~/.dot.variables
 echo 'export TMUX_CLIPBOARD=macos' >> ~/.dot.variables
+echo 'export CODE_MODE=ms-code' >> ~/.dot.variables
 
 # NOTE: Many plugins are installed as part of this.
 make provision
 # To update the local configuration on a provisioned system:
 make sync
 
-# MacOS will only load ~/.profile for interactive shells.
-echo 'source ~/.bashrc' > ~/.profile
-
 # ADDITIONAL TASKS:
 #  * Generate SSH key and add to places (if needed)
 #  * Generate GPG key and add to places (if needed)
-```
-
-## GPG additional changes
-
-```bash
-# Configure the pinentry program for keychain support.
-echo 'pinentry-program /opt/homebrew/bin/pinentry-mac' >> ~/.gnupg/gpg-agent.conf
 ```
 
 ## Mac messed with the keyboard again

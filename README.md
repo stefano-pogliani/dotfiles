@@ -117,6 +117,8 @@ features.
 
 | Variable Name | Description | Default |
 | ------------- | ----------- | ------- |
+| `CODE_MODE` | What version of VS Code to use | `codium` |
+| `PROFILE` | Device profile, used by some automation to pick tools/versions | `personal` |
 | `TARGET_MACOS` | The dotfile configuration is being applied on a MacOS instance | `no` |
 | `TMUX_CLIPBOARD` | Tune how tmux will copy text into the system clipboard | `fedora-wayland` |
 
