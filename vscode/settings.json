@@ -24,8 +24,12 @@
   "cSpell.language": "en-GB",
   "git.openRepositoryInParentFolders": "always",
   "redhat.telemetry.enabled": false,
-  "remote.SSH.configFile": "~/.vscode/remote-ssh-config",
   "todo-tree.tree.autoRefresh": false,
+  // Only valid for the official VS Code // Work extensions.
+  "remote.SSH.configFile": "~/.vscode/remote-ssh-config",
+
+  // Extensions settings.
+  "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
 
   // Extensions settings: Rust language server.
   "rust-analyzer.completion.autoimport.enable": false,
@@ -55,7 +59,6 @@
   "chat.extensionTools.enabled": false,
   "chat.notifyWindowOnConfirmation": "off",
   "chat.tools.terminal.enableAutoApprove": false,
-  "remote.SSH.experimental.chat": false,
   "telemetry.feedback.enabled": false,
   "terminal.integrated.initialHint": false,
   "workbench.enableExperiments": false,
@@ -63,6 +66,8 @@
   "workbench.navigationControl.enabled": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
 
+  // Only valid for the official VS Code // Work extensions.
+  "remote.SSH.experimental.chat": false,
   "python.analysis.aiCodeActions": {
     "generateDocstring": false,
     "generateSymbol": false,
